@@ -1,114 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Kaisei+HarunoUmi:wght@500;700&display=swap");
-html {
-  overflow-x: hidden;
-  scrollbar-gutter: stable;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 200vh;
-  overflow-x: hidden;
-  scrollbar-gutter: stable;
-}
-
-.container {
-  margin: auto;
-  width: 1320px;
-}
-
-.scroll-block {
-  overflow: hidden;
-}
-
-.regular-transition {
-  transition: all 200ms linear;
-}
-
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .container {
-    width: 1140px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .container {
-    width: 960px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .container {
-    width: 720px;
-  }
-}
-@media (min-width: 576px) and (max-width: 767px) {
-  .container {
-    width: 540px;
-  }
-}
-@media (max-width: 575px) {
-  .container {
-    width: 95%;
-  }
-}
 .navbar {
   width: 100%;
   height: 65px;
+  // scrollbar-gutter: stable;
 }
-
 .navbar-absolute {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
 }
-
 .navbar-sticky {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
 }
-
 .navbar-purple {
-  background-color: hsl(280, 12%, 40%);
+  background-color: $purple-bg-high;
 }
-
 .navbar-container {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+// logo
 .navbar-logo-container {
-  width: -moz-max-content;
   width: max-content;
   height: 100%;
+  //   background-color: red;
 }
-
 .navbar-logo-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: -moz-max-content;
   width: max-content;
   height: 100%;
 }
-
 .navbar-logo {
   height: 80%;
 }
-
+// logo
+// hamburger
 .navbar-hamburger-icon-container {
-  width: -moz-max-content;
   width: max-content;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .navbar-hamburger-icon {
   width: 40px;
   height: 12px;
@@ -117,53 +57,49 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0 10px 0;
+  //   background-color: red;
   cursor: pointer;
 }
-
 .navbar-hamburger-icon-bar {
   width: 100%;
   height: 2px;
-  background-color: hsl(280, 18%, 90%);
+  background-color: $purple-bg-low;
   transition: all 100ms linear;
 }
-
 .hamburger-clicked {
   transform: translateX(-10px);
 }
-
+// hamburger
+// side menu
 .navbar-side-menu-container {
   width: 680px;
   height: 100vh;
   position: fixed;
   top: 0;
   right: -200%;
-  background-color: hsl(280, 12%, 40%);
+  background-color: $purple-bg-high;
   z-index: -10;
   transition: all 200ms linear;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
-
 .navbar-side-menu-container-bg {
   width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: hsla(280, 12%, 40%, 0.4);
+  background-color: $purple-backdrop-bg;
   z-index: -20;
   display: none;
 }
-
 .side-menu-open {
   right: 0 !important;
 }
-
 .side-menu-backdrop-visible {
   display: block !important;
 }
-
 .nav-links-container {
   height: calc(100% - 80px);
   width: 100%;
@@ -171,46 +107,49 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  // background-color: red;
 }
-
 .nav-link-container {
-  width: -moz-max-content;
   width: max-content;
   height: auto;
   position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 1px;
+    width: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $purple-bg-low;
+    transition: all 200ms linear;
+  }
+  &:hover {
+    &::after {
+      width: 50%;
+    }
+  }
 }
-.nav-link-container::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  height: 1px;
-  width: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: hsl(280, 18%, 90%);
-  transition: all 200ms linear;
-}
-.nav-link-container:hover::after {
-  width: 50%;
-}
-
 .nav-link {
-  font-family: "Kaisei HarunoUmi", serif;
+  font-family: $primary-font;
   font-size: 30px;
-  color: hsl(280, 18%, 90%);
+  color: $purple-bg-low;
   text-transform: capitalize;
   text-decoration: none;
   padding: 10px 0 10px 0;
   margin: 0;
+  // background-color: red;
 }
-
-.active-nav-link::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  height: 1px;
-  width: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: hsl(280, 18%, 90%);
-}/*# sourceMappingURL=style.css.map */
+.active-nav-link {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 1px;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $purple-bg-low;
+  }
+}
+// side menu
