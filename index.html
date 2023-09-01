@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Kaisei+HarunoUmi:wght@500;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/images/favicon.svg" type="icon">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="./assets/js/main.js" defer></script>
@@ -11,7 +14,8 @@
 </head>
 
 <body id="body">
-    <nav id="navbar" class="navbar navbar-purple navbar-absolute">
+    <!-- navbar  -->
+    <nav id="navbar" class="navbar navbar-absolute">
         <div class="container navbar-container">
             <!-- logo  -->
             <div class="navbar-logo-container">
@@ -31,11 +35,11 @@
             <!-- hamburger icon  -->
             <!-- side menu  -->
             <div id="navbar-side-menu-backdrop" class="navbar-side-menu-container-bg"></div>
-            <div id="navbar-side-menu" class="navbar-side-menu-container">
+            <div id="navbar-side-menu" class="navbar-side-menu-container height-limit">
                 <div class="nav-links-container">
                     <!-- nav link  -->
                     <div class="nav-link-container">
-                        <a href="#" class="nav-link active-nav-link">home</a>
+                        <a href="#home" class="nav-link active-nav-link">home</a>
                     </div>
                     <!-- nav link  -->
                     <!-- nav link  -->
@@ -74,6 +78,18 @@
             <!-- side menu  -->
         </div>
     </nav>
+    <!-- navbar  -->
+    <header id="home" class="header height-limit">
+        <div class="header-texts-container">
+            <div class="header-topic-container">
+                <h1 class="header-topic">tanzstudio aliia pushilina</h1>
+            </div>
+            <div class="header-sub-topic-container">
+                <h3 class="header-sub-topic">dancing classes to your doorstep.</h3>
+            </div>
+        </div>
+        <a href="#" class="header-btn regular-transition">register for a free trial</a>
+    </header>
 </body>
 
 </html>
