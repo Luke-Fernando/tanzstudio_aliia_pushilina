@@ -30,6 +30,7 @@ function openSideMenu() {
   const body = document.getElementById("body");
   const hamburgerBtn = document.getElementById("navbar-hamburger-btn");
   const sideMenuBackdrop = document.getElementById("navbar-side-menu-backdrop");
+  const navLinks = document.querySelectorAll("[data-nav-link]");
   let sideMenuStatus = false;
 
   hamburgerBtn.addEventListener("click", function () {
@@ -43,6 +44,18 @@ function openSideMenu() {
     animateHamburger(sideMenuStatus);
     showSideMenu(sideMenuStatus);
     blockScroll(sideMenuStatus);
+  });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      navLinks.forEach((navLink) => {
+        navLink.classList.remove("active-nav-link");
+      });
+      sideMenuStatus = !sideMenuStatus;
+      animateHamburger(sideMenuStatus);
+      showSideMenu(sideMenuStatus);
+      blockScroll(sideMenuStatus);
+      this.classList.add("active-nav-link");
+    });
   });
 }
 
