@@ -65,7 +65,7 @@ function toggleNavbarPosition() {
   const homeSec = document.getElementById("home");
   const navBar = document.getElementById("navbar");
   const options = {
-    threshold: 0,
+    threshold: 0.05,
   };
 
   let navObserver = new IntersectionObserver((entries) => {

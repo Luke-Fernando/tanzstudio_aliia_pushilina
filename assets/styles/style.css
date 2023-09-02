@@ -267,7 +267,7 @@ body {
 }
 .header {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-image: url("../images/header/header-bg.jpg");
   background-size: cover;
   background-position: center;
