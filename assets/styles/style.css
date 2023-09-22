@@ -7,7 +7,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 300vh;
   overflow-x: hidden;
   min-height: 568px;
 }
@@ -30,6 +29,33 @@ body {
   max-height: 1920px;
 }
 
+.page-topic-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-top: 70px;
+}
+.page-topic-container::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  height: 1px;
+  width: 150px;
+  background-color: #6a5a72;
+}
+
+.page-topic {
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #6a5a72;
+  font-size: 50px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
 @media (min-width: 1200px) and (max-width: 1399px) {
   .container {
     width: 1140px;
@@ -39,20 +65,48 @@ body {
   .container {
     width: 960px;
   }
+  .page-topic {
+    font-size: 40px;
+  }
+  .page-topic-container::after {
+    top: 110%;
+    width: 130px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
     width: 720px;
+  }
+  .page-topic {
+    font-size: 35px;
+  }
+  .page-topic-container::after {
+    top: 110%;
+    width: 120px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .container {
     width: 540px;
   }
+  .page-topic {
+    font-size: 35px;
+  }
+  .page-topic-container::after {
+    top: 110%;
+    width: 110px;
+  }
 }
 @media (max-width: 575px) {
   .container {
     width: 95%;
+  }
+  .page-topic {
+    font-size: 30px;
+  }
+  .page-topic-container::after {
+    top: 110%;
+    width: 100px;
   }
 }
 .navbar {
@@ -75,11 +129,13 @@ body {
 }
 
 .navbar-purple {
-  background-color: hsl(280, 12%, 40%);
+  background-color: #6a5a72;
 }
 
 .navbar-container {
+  width: 95%;
   height: 100%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,15 +192,16 @@ body {
 }
 
 .navbar-side-menu-container {
-  width: 680px;
+  width: 500px;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -200%;
-  background-color: hsl(280, 12%, 40%);
+  right: 0;
+  transform: translateX(200px);
+  background-color: #6a5a72;
   z-index: -10;
-  transition: all 200ms linear;
-  display: flex;
+  transition: all 150ms linear;
+  display: none;
   justify-content: center;
   align-items: flex-start;
 }
@@ -155,13 +212,17 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: hsla(280, 12%, 40%, 0.4);
+  background-color: rgba(106, 90, 114, 0.4);
   z-index: -20;
   display: none;
 }
 
-.side-menu-open {
-  right: 0 !important;
+.side-menu-anim {
+  transform: translateX(0);
+}
+
+.side-menu-show {
+  display: flex;
 }
 
 .side-menu-backdrop-visible {
@@ -295,7 +356,7 @@ body {
   margin: 0;
   text-align: center;
   text-transform: capitalize;
-  -webkit-text-stroke: 1px hsl(280, 12%, 40%);
+  -webkit-text-stroke: 1px #6a5a72;
 }
 
 .header-sub-topic-container {
@@ -325,7 +386,7 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   text-decoration: none;
   font-weight: 500;
-  color: hsl(280, 12%, 40%);
+  color: #6a5a72;
   text-transform: capitalize;
 }
 .header-btn:hover {
@@ -416,5 +477,154 @@ body {
     width: 240px;
     height: 40px;
     font-size: 16px;
+  }
+}
+.goal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 100px 0;
+  opacity: 0;
+}
+
+@keyframes show-goal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.show-goal {
+  animation: show-goal 700ms linear forwards;
+}
+
+.goal-img-container {
+  width: 40%;
+  height: auto;
+}
+
+.goal-img {
+  width: 100%;
+}
+
+.goal-content-container {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-content-topic {
+  font-family: "Kaisei HarunoUmi", serif;
+  font-size: 32px;
+  color: #423847;
+  text-align: end;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.goal-content-description {
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #504356;
+  font-size: 18px;
+  text-align: end;
+  line-height: 35px;
+}
+
+.goal-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.goal-content-topic-reverse {
+  text-align: start !important;
+}
+
+.goal-content-description-reverse {
+  text-align: start !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .goal-content-topic {
+    font-size: 30px;
+  }
+  .goal-content-description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .goal {
+    flex-direction: column;
+  }
+  .goal-reverse {
+    flex-direction: column !important;
+  }
+  .goal-img-container {
+    width: 100%;
+  }
+  .goal-content-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .goal-content-topic {
+    font-size: 30px;
+    text-align: start;
+  }
+  .goal-content-description {
+    font-size: 16px;
+    line-height: 28px;
+    text-align: start;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .goal {
+    flex-direction: column;
+  }
+  .goal-reverse {
+    flex-direction: column !important;
+  }
+  .goal-img-container {
+    width: 100%;
+  }
+  .goal-content-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .goal-content-topic {
+    font-size: 30px;
+    text-align: start;
+  }
+  .goal-content-description {
+    font-size: 16px;
+    line-height: 28px;
+    text-align: start;
+  }
+}
+@media (max-width: 575px) {
+  .goal {
+    flex-direction: column;
+    margin: 80px 0;
+  }
+  .goal-reverse {
+    flex-direction: column !important;
+  }
+  .goal-img-container {
+    width: 100%;
+  }
+  .goal-content-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .goal-content-topic {
+    font-size: 30px;
+    text-align: start;
+  }
+  .goal-content-description {
+    font-size: 16px;
+    line-height: 28px;
+    text-align: start;
   }
 }/*# sourceMappingURL=style.css.map */

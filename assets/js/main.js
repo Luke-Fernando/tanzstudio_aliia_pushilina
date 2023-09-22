@@ -6,15 +6,19 @@ function animateHamburger(condition) {
     hamburgerMiddleBar.classList.remove("hamburger-clicked");
   }
 }
-function showSideMenu(condition) {
+async function showSideMenu(condition) {
   const sideMenu = document.getElementById("navbar-side-menu");
   const sideMenuBackdrop = document.getElementById("navbar-side-menu-backdrop");
 
   if (condition) {
-    sideMenu.classList.add("side-menu-open");
+    sideMenu.classList.add("side-menu-show");
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    sideMenu.classList.add("side-menu-anim");
     sideMenuBackdrop.classList.add("side-menu-backdrop-visible");
   } else {
-    sideMenu.classList.remove("side-menu-open");
+    sideMenu.classList.remove("side-menu-anim");
+    await new Promise((resolve) => setTimeout(resolve, 150));
+    sideMenu.classList.remove("side-menu-show");
     sideMenuBackdrop.classList.remove("side-menu-backdrop-visible");
   }
 }
@@ -69,7 +73,7 @@ function toggleNavbarPosition() {
   };
 
   let navObserver = new IntersectionObserver((entries) => {
-    console.log(entries);
+    // console.log(entries);
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         console.log("visible");
@@ -95,7 +99,7 @@ function placeActiveNav(selector, activeLink) {
   let topPosition = elementRect.top;
   let navLinks = document.querySelectorAll("[data-nav-link]");
 
-  console.log(topPosition);
+  // console.log(topPosition);
   if (topPosition == 0) {
     navLinks.forEach((link) => {
       link.classList.remove("active-nav-link");
@@ -124,4 +128,26 @@ function monitorActiveSection(sectionId) {
   activeSectionObserver.observe(element);
 }
 monitorActiveSection("#home");
-// active section monitoring
+
+function lazyLoadGoals() {
+  const goals = document.querySelectorAll("[data-goal]");
+  const options = {
+    threshold: 0.2,
+  };
+  goals.forEach((goal) => {
+    let goalObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(true);
+          goal.classList.add("show-goal");
+          goalObserver.unobserve(goal);
+        } else {
+          console.log(false);
+        }
+      });
+    }, options);
+    goalObserver.observe(goal);
+  });
+}
+
+lazyLoadGoals();

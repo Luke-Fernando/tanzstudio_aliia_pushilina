@@ -19,7 +19,9 @@
   background-color: $purple-bg-high;
 }
 .navbar-container {
+  width: 95%;
   height: 100%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,15 +74,18 @@
 // hamburger
 // side menu
 .navbar-side-menu-container {
-  width: 680px;
+  width: 500px;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -200%;
+  // right: -200%;
+  right: 0;
+  transform: translateX(200px);
   background-color: $purple-bg-high;
   z-index: -10;
-  transition: all 200ms linear;
-  display: flex;
+  transition: all 150ms linear;
+  // display: flex;
+  display: none;
   justify-content: center;
   align-items: flex-start;
   // background-color: red;
@@ -95,8 +100,12 @@
   z-index: -20;
   display: none;
 }
-.side-menu-open {
-  right: 0 !important;
+.side-menu-anim {
+  // right: 0 !important;
+  transform: translateX(0);
+}
+.side-menu-show {
+  display: flex;
 }
 .side-menu-backdrop-visible {
   display: block !important;
