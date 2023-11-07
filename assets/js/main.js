@@ -149,5 +149,4 @@ function lazyLoadGoals() {
     goalObserver.observe(goal);
   });
 }
-
 lazyLoadGoals();
