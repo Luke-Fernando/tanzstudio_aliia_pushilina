@@ -1,5 +1,6 @@
 .header {
   width: 100vw;
+  height: 100vh;
   height: 100dvh;
   background-image: url("../images/header/header-bg.jpg");
   background-size: cover;
@@ -13,11 +14,9 @@
 }
 .header-texts-container {
   width: 800px;
-  //   background-color: antiquewhite;
 }
 .header-topic-container {
   width: 100%;
-  //   background-color: red;
 }
 .header-topic {
   font-family: $header-font;
