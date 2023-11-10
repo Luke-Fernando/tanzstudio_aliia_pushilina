@@ -150,3 +150,17 @@ function lazyLoadGoals() {
   });
 }
 lazyLoadGoals();
+
+function scrollNews() {
+  let prevArrow = document.getElementById("prev-arrow");
+  let nextArrow = document.getElementById("next-arrow");
+  let newsNavigatorsScroller = document.getElementById("news-navigators-scroller");
+  let marginLeft = 0;
+  let marginTop = 0;
+  nextArrow.addEventListener("click", () => {
+    let computedStyle = window.getComputedStyle(newsNavigatorsScroller);
+    console.log(computedStyle.getPropertyValue("flex-direction"));
+  });
+}
+
+// scrollNews();
