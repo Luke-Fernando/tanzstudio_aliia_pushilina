@@ -18,6 +18,9 @@
 </head>
 
 <body id="body">
+    <div id="spinner" class="spinner-container">
+        <div class="spinner"></div>
+    </div>
     <!-- tester  -->
     <!-- <div class="tester">
         <p class="s1200-1399 tester-text">(min-width: 1200px) and (max-width: 1399px)</p>
@@ -116,12 +119,14 @@
         <!-- goal  -->
         <div data-goal class="goal">
             <div class="goal-img-container">
-                <img src="./assets/images/goals/elevating_cultural_fusion.png"
+                <img data-goal-img src="./assets/images/goals/elevating_cultural_fusion.png"
                     alt="Elevating Cultural Fusion" class="goal-img">
             </div>
             <div class="goal-content-container">
-                <h4 class="goal-content-topic">Elevating Cultural Fusion</h4>
-                <p class="goal-content-description">Our goal is to create dance performances that
+                <h4 data-goal-title class="goal-content-topic">Elevating Cultural Fusion</h4>
+                <p data-goal-description class="goal-content-description">Our goal is to create
+                    dance
+                    performances that
                     celebrate the rich tapestry of global cultures. By
                     blending traditional and contemporary dance styles
                     from various regions, we aim to create a unique artistic language that resonates
@@ -135,13 +140,15 @@
         <!-- goal reverse  -->
         <div data-goal class="goal goal-reverse">
             <div class="goal-img-container">
-                <img src="./assets/images/goals/ballerina-886530_640.jpg"
+                <img data-goal-img src="./assets/images/goals/ballerina-886530_640.jpg"
                     alt=" Pushing Boundaries of Expression" class="goal-img">
             </div>
             <div class="goal-content-container">
-                <h4 class="goal-content-topic goal-content-topic-reverse">Pushing Boundaries of
+                <h4 data-goal-title class="goal-content-topic goal-content-topic-reverse">Pushing
+                    Boundaries of
                     Expression</h4>
-                <p class="goal-content-description goal-content-description-reverse">Our objective
+                <p data-goal-description
+                    class="goal-content-description goal-content-description-reverse">Our objective
                     is to challenge conventional notions of dance and
                     movement. We seek to break free
                     from the confines of traditional choreography,
@@ -156,12 +163,13 @@
         <!-- goal  -->
         <div data-goal class="goal">
             <div class="goal-img-container">
-                <img src="./assets/images/goals/inspiring_social_change.png"
+                <img data-goal-img src="./assets/images/goals/inspiring_social_change.png"
                     alt="Inspiring Social Change" class="goal-img">
             </div>
             <div class="goal-content-container">
-                <h4 class="goal-content-topic">Inspiring Social Change</h4>
-                <p class="goal-content-description">Our mission is to leverage the power of dance as
+                <h4 data-goal-title class="goal-content-topic">Inspiring Social Change</h4>
+                <p data-goal-description class="goal-content-description">Our mission is to leverage
+                    the power of dance as
                     a tool for driving positive social change. We are
                     committed to addressing pressing societal issues
                     through our art. By crafting performances that shed light on topics such as
@@ -182,7 +190,7 @@
         <div class="news-display">
             <div class="news-navigators">
                 <!-- news navigator  -->
-                <div class="news-navigator">
+                <div data-news-navigator="0" class="news-navigator active-news">
                     <div class="news-navigator-icon-container">
                         <span class="material-symbols-outlined news-navigator-icon">
                             <!-- beenhere -->
@@ -196,7 +204,7 @@
                 </div>
                 <!-- news navigator  -->
                 <!-- news navigator  -->
-                <div class="news-navigator">
+                <div data-news-navigator="1" class="news-navigator">
                     <div class="news-navigator-icon-container">
                         <span class="material-symbols-outlined news-navigator-icon">
                             <!-- beenhere -->
@@ -210,7 +218,7 @@
                 </div>
                 <!-- news navigator  -->
                 <!-- news navigator  -->
-                <div class="news-navigator">
+                <div data-news-navigator="2" class="news-navigator">
                     <div class="news-navigator-icon-container">
                         <span class="material-symbols-outlined news-navigator-icon">
                             <!-- beenhere -->
@@ -223,101 +231,26 @@
                     </div>
                 </div>
                 <!-- news navigator  -->
-                <!--  -->
-                <!-- news navigator  -->
-                <div class="news-navigator">
-                    <div class="news-navigator-icon-container">
-                        <span class="material-symbols-outlined news-navigator-icon">
-                            <!-- beenhere -->
-                            overview_key
-                        </span>
-                    </div>
-                    <div class="news-navigator-img-container">
-                        <img src="./assets/images/news/news-img-3.jpg"
-                            class="news-navigator-img"></img>
-                    </div>
-                </div>
-                <!-- news navigator  -->
-                <!-- news navigator  -->
-                <div class="news-navigator">
-                    <div class="news-navigator-icon-container">
-                        <span class="material-symbols-outlined news-navigator-icon">
-                            <!-- beenhere -->
-                            overview_key
-                        </span>
-                    </div>
-                    <div class="news-navigator-img-container">
-                        <img src="./assets/images/news/news-img-3.jpg"
-                            class="news-navigator-img"></img>
-                    </div>
-                </div>
-                <!-- news navigator  -->
-                <!-- news navigator  -->
-                <div class="news-navigator">
-                    <div class="news-navigator-icon-container">
-                        <span class="material-symbols-outlined news-navigator-icon">
-                            <!-- beenhere -->
-                            overview_key
-                        </span>
-                    </div>
-                    <div class="news-navigator-img-container">
-                        <img src="./assets/images/news/news-img-3.jpg"
-                            class="news-navigator-img"></img>
-                    </div>
-                </div>
-                <!-- news navigator  -->
-                <!-- news navigator  -->
-                <div class="news-navigator">
-                    <div class="news-navigator-icon-container">
-                        <span class="material-symbols-outlined news-navigator-icon">
-                            <!-- beenhere -->
-                            overview_key
-                        </span>
-                    </div>
-                    <div class="news-navigator-img-container">
-                        <img src="./assets/images/news/news-img-3.jpg"
-                            class="news-navigator-img"></img>
-                    </div>
-                </div>
-                <!-- news navigator  -->
-                <!-- news navigator  -->
-                <div class="news-navigator">
-                    <div class="news-navigator-icon-container">
-                        <span class="material-symbols-outlined news-navigator-icon">
-                            <!-- beenhere -->
-                            overview_key
-                        </span>
-                    </div>
-                    <div class="news-navigator-img-container">
-                        <img src="./assets/images/news/news-img-3.jpg"
-                            class="news-navigator-img"></img>
-                    </div>
-                </div>
-                <!-- news navigator  -->
-                <!-- news navigator  -->
-                <div class="news-navigator">
-                    <div class="news-navigator-icon-container">
-                        <span class="material-symbols-outlined news-navigator-icon">
-                            <!-- beenhere -->
-                            overview_key
-                        </span>
-                    </div>
-                    <div class="news-navigator-img-container">
-                        <img src="./assets/images/news/news-img-3.jpg"
-                            class="news-navigator-img"></img>
-                    </div>
-                </div>
-                <!-- news navigator  -->
-                <!--  -->
             </div>
+            <!-- news  -->
             <div class="news-container">
+                <div class="news-skeleton">
+                    <div class="news-skeleton-img"></div>
+                    <div class="news-skeleton-news">
+                        <div class="news-skeleton-title"></div>
+                        <div class="news-skeleton-description"></div>
+                    </div>
+                </div>
                 <div class="news-img-container">
-                    <img src="./assets/images/news/news-img-1.jpg" alt="" class="news-img">
+                    <img id="news-img" src="./assets/images/news/news-img-1.jpg" alt=""
+                        class="news-img">
                 </div>
                 <div class="news-content-container">
-                    <h4 class="news-content-title">"Harmony in Motion" - A Celebration of Unity
+                    <h4 id="news-title" class="news-content-title">"Harmony in Motion" - A
+                        Celebration of Unity
                         Through Dance</h4>
-                    <p class="news-content-description">Our participation in the "Harmony in Motion"
+                    <p id="news-description" class="news-content-description">Our participation in
+                        the "Harmony in Motion"
                         dance event was a pivotal moment in our artistic
                         journey. The event, aimed at promoting cultural
                         understanding and unity, brought together dancers from diverse backgrounds
@@ -325,8 +258,9 @@
                         which seamlessly integrated
                         elements of various dance forms, we contributed to the mesmerizing tapestry
                         of movement that represented the beauty of global
-                        harmony.</p>
-                    <p class="news-content-description">Our performance told a story of
+                        harmony.
+                        <br><br>
+                        Our performance told a story of
                         collaboration and cooperation, transcending linguistic and
                         cultural barriers. The event
                         provided us with an
@@ -335,9 +269,11 @@
                         expressions. The
                         applause and appreciation from the audience reaffirmed the power of dance as
                         a universal language that can bridge differences
-                        and forge connections.</p>
+                        and forge connections.
+                    </p>
                 </div>
             </div>
+            <!-- news  -->
         </div>
     </section>
     <!-- news  -->

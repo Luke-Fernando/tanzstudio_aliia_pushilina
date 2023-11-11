@@ -199,3 +199,52 @@ function customSelector() {
   });
 }
 customSelector();
+
+function spinner() {
+  document.onreadystatechange = async () => {
+    if (document.readyState === "complete") {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      document.getElementById("spinner").style.display = "none";
+    }
+  };
+}
+
+function loadNews() {
+  const newsNavBtnElems = document.querySelectorAll("[data-news-navigator]");
+  const newsNavBtns = [...newsNavBtnElems];
+  const newsImg = document.getElementById("news-img");
+  const newsTitle = document.getElementById("news-title");
+  const newsDescription = document.getElementById("news-description");
+  let xhttp = new XMLHttpRequest();
+
+  // Define a callback function to handle the response
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      // Parse the XML response
+      spinner();
+      let xmlDoc = this.responseXML;
+      let posts = xmlDoc.querySelectorAll("post");
+
+      // Now you can work with the XML data
+      console.log(posts[0].querySelector("image").getAttribute("src"));
+      newsNavBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          let btnAttVal = Number(btn.getAttribute("data-news-navigator"));
+          newsImg.setAttribute(
+            "src",
+            `./assets/images/news/${posts[btnAttVal].querySelector("image").getAttribute("src")}`
+          );
+          newsTitle.innerText = posts[btnAttVal].querySelector("title").textContent;
+          newsDescription.innerText = posts[btnAttVal].querySelector("description").textContent;
+        });
+      });
+    }
+  };
+
+  // Open a GET request to the XML file
+  xhttp.open("GET", "../../data/news.xml", true);
+
+  // Send the request
+  xhttp.send();
+}
+loadNews();
