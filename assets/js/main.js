@@ -76,12 +76,12 @@ function toggleNavbarPosition() {
     // console.log(entries);
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log("visible");
+        // console.log("visible");
         navBar.classList.add("navbar-absolute");
         navBar.classList.remove("navbar-fixed");
         navBar.classList.remove("navbar-purple");
       } else {
-        console.log("not visible");
+        // console.log("not visible");
         navBar.classList.remove("navbar-absolute");
         navBar.classList.add("navbar-fixed");
         navBar.classList.add("navbar-purple");
@@ -138,11 +138,11 @@ function lazyLoadGoals() {
     let goalObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log(true);
+          // console.log(true);
           goal.classList.add("show-goal");
           goalObserver.unobserve(goal);
         } else {
-          console.log(false);
+          // console.log(false);
         }
       });
     }, options);
@@ -151,16 +151,51 @@ function lazyLoadGoals() {
 }
 lazyLoadGoals();
 
-function scrollNews() {
-  let prevArrow = document.getElementById("prev-arrow");
-  let nextArrow = document.getElementById("next-arrow");
-  let newsNavigatorsScroller = document.getElementById("news-navigators-scroller");
-  let marginLeft = 0;
-  let marginTop = 0;
-  nextArrow.addEventListener("click", () => {
-    let computedStyle = window.getComputedStyle(newsNavigatorsScroller);
-    console.log(computedStyle.getPropertyValue("flex-direction"));
+function customSelector() {
+  let customSelectors = document.querySelectorAll("[data-selector]");
+  customSelectors = [...customSelectors];
+  customSelectors.forEach((selector) => {
+    let selectorAttVal = selector.getAttribute("data-selector");
+    let optionsContainer = document.querySelector(`[data-options="${selectorAttVal}"]`);
+    let options = optionsContainer.querySelectorAll("[data-option]");
+    let arrowIcon = document.querySelector(`[data-selector-arrow="${selectorAttVal}"]`);
+    let flag = false;
+    selector.addEventListener("click", async () => {
+      async function openOptions() {
+        optionsContainer.classList.add("option-display");
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        optionsContainer.classList.add("options-anim");
+        arrowIcon.classList.add("arrow-up");
+        flag = true;
+        console.log(`flag ${flag}`);
+      }
+      async function closeOptions() {
+        optionsContainer.classList.remove("option-display");
+        flag = false;
+        console.log(`flag ${flag}`);
+        arrowIcon.classList.remove("arrow-up");
+        optionsContainer.removeEventListener("transitionend", closeOptions);
+      }
+      if (!flag) {
+        openOptions();
+      } else {
+        optionsContainer.classList.remove("options-anim");
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        optionsContainer.addEventListener("transitionend", closeOptions);
+      }
+    });
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        let optionVal = option
+          .querySelector("[data-option-value]")
+          .getAttribute("data-option-value");
+        selector
+          .querySelector("[data-selected-value]")
+          .setAttribute("data-selected-value", optionVal);
+        selector.querySelector("[data-selected-value]").textContent =
+          option.querySelector("[data-option-value]").textContent;
+      });
+    });
   });
 }
-
-// scrollNews();
+customSelector();

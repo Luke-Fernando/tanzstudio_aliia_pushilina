@@ -1317,4 +1317,325 @@ body {
   .course-nav-arrow-icon {
     font-size: 5rem !important;
   }
+}
+.our-team {
+  margin: auto;
+}
+
+.team {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  margin: 100px auto;
+}
+
+.team-member {
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.team-member-img-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-member-img {
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.team-member-name-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.team-member-name {
+  font-size: 20px;
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #504356;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+}
+
+.team-member-position-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.team-member-position {
+  font-size: 12px;
+  font-family: #ab96b6;
+  color: #423847;
+  font-weight: 500;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .team {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  .team-member {
+    width: 180px;
+    margin: 1rem 0;
+  }
+}
+.contact-us {
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  margin: 100px auto;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: 1rem 0;
+}
+
+.form-input-label-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-input-label {
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #504356;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+}
+
+.form-input-container {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Kaisei HarunoUmi", serif;
+  background-color: #e7e1ea;
+  border: none;
+  outline: none;
+  color: #6a5a72;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+}
+
+.form-select {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Kaisei HarunoUmi", serif;
+  background-color: #e7e1ea;
+  text-transform: capitalize;
+  color: #6a5a72;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.form-selected-text {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.form-select-arrow {
+  width: -moz-max-content;
+  width: max-content;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-select-arrow-icon {
+  color: inherit;
+  font-size: 1.2rem !important;
+  pointer-events: none;
+  transition: transform 100ms ease-in-out;
+}
+
+.form-item-half {
+  width: 49%;
+}
+
+.form-item-full {
+  width: 100%;
+}
+
+.form-send-btn {
+  margin: 1rem 0;
+  border: none;
+  font-family: "Kaisei HarunoUmi", serif;
+  background-color: #6a5a72;
+  font-size: 20px;
+  font-weight: 500;
+  color: #e7e1ea;
+  text-transform: capitalize;
+  padding: 0.4rem 4rem;
+}
+
+.form-options {
+  min-width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #e7e1ea;
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  top: 105%;
+  right: 0;
+  box-sizing: border-box;
+  transform: translateY(-20px);
+  transition: transform 100ms ease-in-out;
+}
+
+.option-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  transition: all 100ms linear;
+}
+.option-container:hover {
+  background-color: #ab96b6;
+  color: #e7e1ea;
+}
+.option-container:active {
+  background-color: #ab96b6;
+  color: #e7e1ea;
+}
+
+.option {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  text-transform: capitalize;
+}
+
+.option-display {
+  display: flex !important;
+}
+
+.options-anim {
+  transform: translateY(0);
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .form-input-label {
+    font-size: 18px;
+  }
+  .form-input-label {
+    font-size: 18px;
+  }
+  .form-send-btn {
+    margin: 1rem 0;
+    font-size: 18px;
+    padding: 0.4rem 4rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .form-input-label {
+    font-size: 16px;
+  }
+  .form-input {
+    font-size: 14px;
+  }
+  .form-select {
+    font-size: 14px;
+  }
+  .form-item-half {
+    width: 100%;
+  }
+  .form-send-btn {
+    margin: 1rem 0;
+    font-size: 18px;
+    padding: 0.4rem 4rem;
+  }
+}
+@media (max-width: 575px) {
+  .form-input-label {
+    font-size: 16px;
+  }
+  .form-input {
+    font-size: 14px;
+  }
+  .form-select {
+    font-size: 14px;
+  }
+  .form-item-half {
+    width: 100%;
+  }
+  .form-send-btn {
+    margin: 1rem 0;
+    font-size: 18px;
+    padding: 0.4rem 4rem;
+  }
 }/*# sourceMappingURL=style.css.map */
