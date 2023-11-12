@@ -247,12 +247,12 @@ function loadNews() {
   };
 
   // Open a GET request to the XML file
-  // xhttp.open("GET", "../../data/news.xml", true);
-  xhttp.open(
-    "GET",
-    "https://github.com/Luke-Fernando/tanzstudio_aliia_pushilina/blob/main/data/news.xml",
-    true
-  );
+  xhttp.open("GET", "../../docs/news.xml", true);
+  // xhttp.open(
+  //   "GET",
+  //   "https://github.com/Luke-Fernando/tanzstudio_aliia_pushilina/blob/main/data/news.xml",
+  //   true
+  // );
 
   // Send the request
   xhttp.send();
