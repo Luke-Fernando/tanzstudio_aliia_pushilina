@@ -61,14 +61,10 @@ function openSideMenu() {
   });
   navLinks.forEach((link) => {
     link.addEventListener("click", function () {
-      navLinks.forEach((navLink) => {
-        navLink.classList.remove("active-nav-link");
-      });
       sideMenuStatus = !sideMenuStatus;
       animateHamburger(sideMenuStatus);
       showSideMenu(sideMenuStatus);
       blockScroll(sideMenuStatus);
-      this.classList.add("active-nav-link");
     });
   });
 }
@@ -118,26 +114,26 @@ function placeActiveNav(selector, activeLink) {
   }
 }
 
-function monitorActiveSection(sectionId) {
-  let element = document.querySelector(sectionId);
-  let activeLink = document.querySelector(`[href='${sectionId}']`);
-  function handle() {
-    placeActiveNav(sectionId, activeLink);
-  }
-  let activeSectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        window.addEventListener("scroll", handle, true);
-      } else {
-        window.removeEventListener("scroll", handle, true);
-        activeLink.classList.remove("active-nav-link");
-      }
-    });
-  });
+// function monitorActiveSection(sectionId) {
+//   let element = document.querySelector(sectionId);
+//   let activeLink = document.querySelector(`[href='${sectionId}']`);
+//   function handle() {
+//     placeActiveNav(sectionId, activeLink);
+//   }
+//   let activeSectionObserver = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         window.addEventListener("scroll", handle, true);
+//       } else {
+//         window.removeEventListener("scroll", handle, true);
+//         activeLink.classList.remove("active-nav-link");
+//       }
+//     });
+//   });
 
-  activeSectionObserver.observe(element);
-}
-monitorActiveSection("#home");
+//   activeSectionObserver.observe(element);
+// }
+// monitorActiveSection("#home");
 
 function lazyLoadGoals() {
   const goals = document.querySelectorAll("[data-goal]");
@@ -250,3 +246,57 @@ function loadNews() {
   xhttp.send();
 }
 loadNews();
+
+function changeNavWithURL() {
+  const navLinksElems = document.querySelectorAll("[data-nav-link]");
+  const navLinks = [...navLinksElems];
+  let hash = window.location.hash;
+  navLinks.forEach((link) => {
+    if (link.getAttribute("data-nav-link") == hash) {
+      link.classList.add("active-nav-link");
+    } else {
+      link.classList.remove("active-nav-link");
+    }
+  });
+  window.addEventListener("hashchange", (e) => {
+    hash = window.location.hash;
+    navLinks.forEach((link) => {
+      if (link.getAttribute("data-nav-link") == hash) {
+        link.classList.add("active-nav-link");
+      } else {
+        link.classList.remove("active-nav-link");
+      }
+    });
+  });
+}
+changeNavWithURL();
+
+function changeNavWithScroll() {
+  const mainSectionElems = document.querySelectorAll("[data-main-section]");
+  const mainSections = [...mainSectionElems];
+  const navLinksElems = document.querySelectorAll("[data-nav-link]");
+  const navLinks = [...navLinksElems];
+  mainSections.forEach((section) => {
+    let activeIntersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let activeSecAtt = section.getAttribute("data-main-section");
+            navLinks.forEach((link) => {
+              if (link.getAttribute("data-nav-link") == `#${activeSecAtt}`) {
+                link.classList.add("active-nav-link");
+              } else {
+                link.classList.remove("active-nav-link");
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+    activeIntersectionObserver.observe(section);
+  });
+}
+changeNavWithScroll();
