@@ -217,15 +217,15 @@ function loadNews() {
   const newsTitle = document.getElementById("news-title");
   const newsDescription = document.getElementById("news-description");
   let xhttp = new XMLHttpRequest();
+  let url =
+    "https://raw.githubusercontent.com/Luke-Fernando/tanzstudio_aliia_pushilina/main/data/news.xml";
+  // let url = "../../data/news.xml";
 
-  // Define a callback function to handle the response
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      // Parse the XML response
       let xmlDoc = this.responseXML;
       let posts = xmlDoc.querySelectorAll("post");
 
-      // Now you can work with the XML data
       newsNavBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
           console.log("load news function working");
@@ -246,15 +246,7 @@ function loadNews() {
     }
   };
 
-  // Open a GET request to the XML file
-  // xhttp.open("GET", "../../docs/news.xml", true);
-  xhttp.open(
-    "GET",
-    "https://raw.githubusercontent.com/Luke-Fernando/tanzstudio_aliia_pushilina/main/docs/news.xml",
-    true
-  );
-
-  // Send the request
+  xhttp.open("GET", url, true);
   xhttp.send();
 }
 loadNews();
