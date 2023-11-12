@@ -228,7 +228,9 @@ function loadNews() {
       // Now you can work with the XML data
       newsNavBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
+          console.log("load news function working");
           newsNavBtns.forEach((ele) => {
+            console.log("load news button working");
             ele.classList.remove("active-news");
             btn.classList.add("active-news");
           });
