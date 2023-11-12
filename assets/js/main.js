@@ -223,7 +223,7 @@ function loadNews() {
 
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      let xmlDoc = this.responseXML;
+      let xmlDoc = new DOMParser().parseFromString(this.responseText, "application/xml");
       let posts = xmlDoc.querySelectorAll("post");
 
       newsNavBtns.forEach((btn) => {
