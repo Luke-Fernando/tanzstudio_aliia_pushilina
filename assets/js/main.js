@@ -1,3 +1,13 @@
+function spinner() {
+  document.onreadystatechange = async () => {
+    if (document.readyState === "complete") {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      document.getElementById("spinner").style.display = "none";
+    }
+  };
+}
+spinner();
+
 function animateHamburger(condition) {
   const hamburgerMiddleBar = document.getElementById("navbar-hamburger-icon-middle-bar");
   if (condition) {
@@ -200,15 +210,6 @@ function customSelector() {
 }
 customSelector();
 
-function spinner() {
-  document.onreadystatechange = async () => {
-    if (document.readyState === "complete") {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      document.getElementById("spinner").style.display = "none";
-    }
-  };
-}
-
 function loadNews() {
   const newsNavBtnElems = document.querySelectorAll("[data-news-navigator]");
   const newsNavBtns = [...newsNavBtnElems];
@@ -221,14 +222,16 @@ function loadNews() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       // Parse the XML response
-      spinner();
       let xmlDoc = this.responseXML;
       let posts = xmlDoc.querySelectorAll("post");
 
       // Now you can work with the XML data
-      console.log(posts[0].querySelector("image").getAttribute("src"));
       newsNavBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
+          newsNavBtns.forEach((ele) => {
+            ele.classList.remove("active-news");
+            btn.classList.add("active-news");
+          });
           let btnAttVal = Number(btn.getAttribute("data-news-navigator"));
           newsImg.setAttribute(
             "src",
