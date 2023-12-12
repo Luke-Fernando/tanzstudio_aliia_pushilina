@@ -300,3 +300,32 @@ function changeNavWithScroll() {
   });
 }
 changeNavWithScroll();
+
+function contact() {
+  const name = document.getElementById("name");
+  const topic = document.getElementById("topic-value");
+  const subject = document.getElementById("subject");
+  const message = document.getElementById("message");
+  const sendBtn = document.getElementById("send");
+  sendBtn.addEventListener("click", () => {
+    let request = new XMLHttpRequest();
+    let form = new FormData();
+
+    form.append("name", name.value);
+    form.append("topic", topic.getAttribute("data-selected-value"));
+    form.append("subject", subject.value);
+    form.append("message", message.value);
+
+    request.onreadystatechange = () => {
+      if (request.status == 200 && request.readyState == 4) {
+        let response = request.responseText;
+        alert(response);
+      }
+    };
+
+    request.open("POST", "https://tanzstudio-backend.vercel.app/api/index.php", true);
+    request.send(form);
+  });
+}
+
+contact();
