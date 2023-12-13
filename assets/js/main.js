@@ -319,7 +319,7 @@ function contact() {
     request.onreadystatechange = () => {
       if (request.status == 200 && request.readyState == 4) {
         let response = request.responseText;
-        alert(response);
+        console.log(response);
       }
     };
 
