@@ -323,7 +323,7 @@ function contact() {
       }
     };
 
-    request.open("POST", "https://tanzstudio-backend.vercel.app/api/index.php", true);
+    request.open("POST", "https://tanzstudio-backend.vercel.app/api/idance_studio.php", true);
     request.send(form);
   });
 }
