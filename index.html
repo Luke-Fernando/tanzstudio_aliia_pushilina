@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="./assets/images/favicon.svg" type="icon">
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <script src="https://kit.fontawesome.com/4e769e3898.js" crossorigin="anonymous"></script>
     <script src="./assets/js/main.js" defer></script>
     <title>Tanzstudio | Aliia Pushilina</title>
 </head>
@@ -97,6 +98,25 @@
         </div>
     </nav>
     <!-- navbar  -->
+    <!-- alert -->
+    <div id="alert" class="alert">
+        <!-- success  -->
+        <div id="alert-success" class="alert-text-box">
+            <i class="fa-regular fa-circle-check alert-text-icon"></i>
+            <p data-alert-text="success" class="alert-text">This is a sample alert</p>
+        </div>
+        <!-- success -->
+        <!-- error  -->
+        <div id="alert-error" class="alert-text-box">
+            <i class="fa-regular fa-circle-xmark alert-text-icon"></i>
+            <p data-alert-text="error" class="alert-text">This is a sample alert</p>
+        </div>
+        <!-- error -->
+        <button id="alert-close-btn" class="alert-close-btn">
+            <i class="fa-solid fa-xmark alert-close-icon"></i>
+        </button>
+    </div>
+    <!-- alert  -->
     <!-- header  -->
     <header data-main-section="home" id="home" class="header height-limit">
         <div class="header-texts-container">
@@ -487,84 +507,98 @@
         </div>
         <!-- page topic  -->
         <div class="form">
-            <!-- form item  -->
-            <div class="form-item form-item-half">
-                <div class="form-input-label-container">
-                    <label for="name" class="form-input-label">your name</label>
-                </div>
-                <div class="form-input-container">
-                    <input id="name" type="text" class="form-input"
-                        placeholder="Type your name here">
-                </div>
-            </div>
-            <!-- form item  -->
-            <!-- form item  -->
-            <div class="form-item form-item-half">
-                <div class="form-input-label-container">
-                    <p for="topic" class="form-input-label">topic</p>
-                </div>
-                <div class="form-input-container">
-                    <!-- selector  -->
-                    <div data-selector="topic" id="topic" class="form-select">
-                        <p id="topic-value" data-selected-value="" class="form-selected-text">Select
-                            your topic</p>
-                        <div class="form-select-arrow">
-                            <span data-selector-arrow="topic"
-                                class="material-symbols-outlined form-select-arrow-icon">
-                                expand_more
-                            </span>
-                        </div>
-                        <!-- options  -->
-                        <div data-options="topic" class="form-options">
-                            <!-- option  -->
-                            <div data-option class="option-container">
-                                <p data-option-value="0" class="option">Select your topic</p>
-                            </div>
-                            <!-- option  -->
-                            <!-- option  -->
-                            <div data-option class="option-container">
-                                <p data-option-value="1" class="option">option 1</p>
-                            </div>
-                            <!-- option  -->
-                            <!-- option  -->
-                            <div data-option class="option-container">
-                                <p data-option-value="2" class="option">option 2</p>
-                            </div>
-                            <!-- option  -->
-                            <!-- option  -->
-                            <div data-option class="option-container">
-                                <p data-option-value="3" class="option">option 3</p>
-                            </div>
-                            <!-- option  -->
-                        </div>
-                        <!-- options  -->
+            <div class="form-items">
+                <!-- form item  -->
+                <div class="form-item form-item-half">
+                    <div class="form-input-label-container">
+                        <label for="name" class="form-input-label">your name</label>
                     </div>
-                    <!-- selector  -->
+                    <div class="form-input-container">
+                        <input id="name" type="text" class="form-input"
+                            placeholder="Type your name here">
+                    </div>
                 </div>
+                <!-- form item  -->
+                <!-- form item  -->
+                <div class="form-item form-item-half">
+                    <div class="form-input-label-container">
+                        <p for="topic" class="form-input-label">topic</p>
+                    </div>
+                    <div class="form-input-container">
+                        <!-- selector  -->
+                        <div data-selector="topic" id="topic" class="form-select">
+                            <p id="topic-value" data-selected-value="" class="form-selected-text">
+                                Select
+                                your topic</p>
+                            <div class="form-select-arrow">
+                                <span data-selector-arrow="topic"
+                                    class="material-symbols-outlined form-select-arrow-icon">
+                                    expand_more
+                                </span>
+                            </div>
+                            <!-- options  -->
+                            <div data-options="topic" class="form-options">
+                                <!-- option  -->
+                                <div data-option class="option-container">
+                                    <p data-option-value="0" class="option">Select your topic</p>
+                                </div>
+                                <!-- option  -->
+                                <!-- option  -->
+                                <div data-option class="option-container">
+                                    <p data-option-value="1" class="option">option 1</p>
+                                </div>
+                                <!-- option  -->
+                                <!-- option  -->
+                                <div data-option class="option-container">
+                                    <p data-option-value="2" class="option">option 2</p>
+                                </div>
+                                <!-- option  -->
+                                <!-- option  -->
+                                <div data-option class="option-container">
+                                    <p data-option-value="3" class="option">option 3</p>
+                                </div>
+                                <!-- option  -->
+                            </div>
+                            <!-- options  -->
+                        </div>
+                        <!-- selector  -->
+                    </div>
+                </div>
+                <!-- form item  -->
+                <!-- form item  -->
+                <div class="form-item form-item-full">
+                    <div class="form-input-label-container">
+                        <label for="email" class="form-input-label">email</label>
+                    </div>
+                    <div class="form-input-container">
+                        <input id="email" type="email" class="form-input"
+                            placeholder="Type your email here">
+                    </div>
+                </div>
+                <!-- form item  -->
+                <!-- form item  -->
+                <div class="form-item form-item-full">
+                    <div class="form-input-label-container">
+                        <label for="subject" class="form-input-label">subject</label>
+                    </div>
+                    <div class="form-input-container">
+                        <input id="subject" type="text" class="form-input"
+                            placeholder="Type your subject here">
+                    </div>
+                </div>
+                <!-- form item  -->
+                <!-- form item  -->
+                <div class="form-item form-item-full">
+                    <div class="form-input-label-container">
+                        <label for="message" class="form-input-label">message</label>
+                    </div>
+                    <div class="form-input-container">
+                        <textarea id="message" type="text" rows="10" class="form-input"
+                            placeholder="Type your message here"></textarea>
+                    </div>
+                </div>
+                <!-- form item  -->
             </div>
-            <!-- form item  -->
-            <!-- form item  -->
-            <div class="form-item form-item-full">
-                <div class="form-input-label-container">
-                    <label for="subject" class="form-input-label">subject</label>
-                </div>
-                <div class="form-input-container">
-                    <input id="subject" type="text" class="form-input"
-                        placeholder="Type your subject here">
-                </div>
-            </div>
-            <!-- form item  -->
-            <!-- form item  -->
-            <div class="form-item form-item-full">
-                <div class="form-input-label-container">
-                    <label for="message" class="form-input-label">message</label>
-                </div>
-                <div class="form-input-container">
-                    <textarea id="message" type="text" rows="10" class="form-input"
-                        placeholder="Type your message here"></textarea>
-                </div>
-            </div>
-            <!-- form item  -->
             <button id="send" class="form-send-btn">
                 send
             </button>

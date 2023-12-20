@@ -304,27 +304,65 @@ changeNavWithScroll();
 function contact() {
   const name = document.getElementById("name");
   const topic = document.getElementById("topic-value");
+  const email = document.getElementById("email");
   const subject = document.getElementById("subject");
   const message = document.getElementById("message");
   const sendBtn = document.getElementById("send");
-  sendBtn.addEventListener("click", () => {
-    let request = new XMLHttpRequest();
+  const alert = document.getElementById("alert");
+  const successAlert = document.querySelector("#alert-success");
+  const errorAlert = document.querySelector("#alert-error");
+  const alertClose = document.getElementById("alert-close-btn");
+  const clickOrTouch = "ontouchstart" in window ? "touchstart" : "click";
+  sendBtn.addEventListener(clickOrTouch, async (event) => {
+    event.preventDefault();
+    // let request = new XMLHttpRequest();
     let form = new FormData();
 
     form.append("name", name.value);
     form.append("topic", topic.getAttribute("data-selected-value"));
+    form.append("email", email.value);
     form.append("subject", subject.value);
     form.append("message", message.value);
 
-    request.onreadystatechange = () => {
-      if (request.status == 200 && request.readyState == 4) {
-        let response = request.responseText;
-        console.log(response);
-      }
-    };
+    let request = await fetch("https://tanzstudio-backend.vercel.app/api/idance_studio.php", {
+      method: "POST",
+      body: form,
+    });
 
-    request.open("POST", "https://tanzstudio-backend.vercel.app/api/idance_studio.php", true);
-    request.send(form);
+    let response = request.text();
+    const responseText = await response.then((value) => value);
+    if (responseText == "success") {
+      alert.classList.add("show-alert");
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      alert.classList.add("pop-alert");
+      errorAlert.classList.remove("alert-error");
+      successAlert.classList.add("alert-success");
+      document.querySelector('[data-alert-text="success"]').innerText =
+        "Thank you for contacting us!";
+    } else {
+      alert.classList.add("show-alert");
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      alert.classList.add("pop-alert");
+      successAlert.classList.remove("alert-success");
+      errorAlert.classList.add("alert-error");
+      document.querySelector('[data-alert-text="error"]').innerText = responseText;
+    }
+  });
+  alertClose.addEventListener(clickOrTouch, async (event) => {
+    event.preventDefault();
+    alert.classList.remove("pop-alert");
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    alert.classList.add("pop-alert-reverse");
+    alert.addEventListener(
+      "animationend",
+      () => {
+        alert.classList.remove("show-alert");
+        alert.classList.remove("pop-alert-reverse");
+      },
+      {
+        once: true,
+      }
+    );
   });
 }
 

@@ -76,6 +76,107 @@ body {
     font-family: $primary-font;
   }
 }
+@keyframes showAlert {
+  0% {
+    transform: translateX(120%);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.alert {
+  // width: 500px;
+  width: max-content;
+  max-width: 90%;
+  min-height: 50px;
+  height: auto;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+  // background-color: $purple-bg-high;
+  background-color: $news-hover-bg;
+  border: 1px solid $purple-bg-high;
+  // border: 1px solid $news-hover-bg;
+  // opacity: 0.5;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  // display: flex;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-start;
+  transform: translateX(120%);
+}
+.pop-alert {
+  animation-name: showAlert;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+}
+.pop-alert-reverse {
+  animation-direction: reverse;
+  animation-name: showAlert;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+}
+.show-alert {
+  display: flex;
+}
+.alert-success {
+  display: flex !important;
+}
+.alert-error {
+  display: flex !important;
+}
+.alert-close-btn {
+  width: 30px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  transition: all 200ms linear;
+  &:hover {
+    background-color: $purple-bg-low;
+  }
+}
+.alert-close-icon {
+  color: $description-color;
+  font-size: 20px;
+  pointer-events: none;
+}
+.alert-text-box {
+  width: max-content;
+  min-height: 100%;
+  height: auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  margin-left: 25px;
+}
+.alert-text {
+  font-family: $primary-font;
+  color: $description-color;
+  font-size: 15px;
+  text-align: left;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  // line-height: 25px;
+}
+.alert-text-icon {
+  color: $description-color;
+  font-size: 15px;
+  margin-right: 10px;
+}
 @media (min-width: 1200px) and (max-width: 1399px) {
   .container {
     width: 1140px;
