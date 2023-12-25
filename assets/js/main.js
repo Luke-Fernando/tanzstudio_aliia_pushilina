@@ -73,29 +73,32 @@ openSideMenu();
 
 function toggleNavbarPosition() {
   const homeSec = document.getElementById("home");
-  const navBar = document.getElementById("navbar");
-  const options = {
-    threshold: 0.05,
-  };
+  console.log(homeSec);
+  if (homeSec != null) {
+    const navBar = document.getElementById("navbar");
+    const options = {
+      threshold: 0.05,
+    };
 
-  let navObserver = new IntersectionObserver((entries) => {
-    // console.log(entries);
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // console.log("visible");
-        navBar.classList.add("navbar-absolute");
-        navBar.classList.remove("navbar-fixed");
-        navBar.classList.remove("navbar-purple");
-      } else {
-        // console.log("not visible");
-        navBar.classList.remove("navbar-absolute");
-        navBar.classList.add("navbar-fixed");
-        navBar.classList.add("navbar-purple");
-      }
-    });
-  }, options);
+    let navObserver = new IntersectionObserver((entries) => {
+      // console.log(entries);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // console.log("visible");
+          navBar.classList.add("navbar-absolute");
+          navBar.classList.remove("navbar-fixed");
+          navBar.classList.remove("navbar-purple");
+        } else {
+          // console.log("not visible");
+          navBar.classList.remove("navbar-absolute");
+          navBar.classList.add("navbar-fixed");
+          navBar.classList.add("navbar-purple");
+        }
+      });
+    }, options);
 
-  navObserver.observe(homeSec);
+    navObserver.observe(homeSec);
+  }
 }
 toggleNavbarPosition();
 // active section monitoring
@@ -137,23 +140,25 @@ function placeActiveNav(selector, activeLink) {
 
 function lazyLoadGoals() {
   const goals = document.querySelectorAll("[data-goal]");
-  const options = {
-    threshold: 0.2,
-  };
-  goals.forEach((goal) => {
-    let goalObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // console.log(true);
-          goal.classList.add("show-goal");
-          goalObserver.unobserve(goal);
-        } else {
-          // console.log(false);
-        }
-      });
-    }, options);
-    goalObserver.observe(goal);
-  });
+  if (goals != null) {
+    const options = {
+      threshold: 0.2,
+    };
+    goals.forEach((goal) => {
+      let goalObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // console.log(true);
+            goal.classList.add("show-goal");
+            goalObserver.unobserve(goal);
+          } else {
+            // console.log(false);
+          }
+        });
+      }, options);
+      goalObserver.observe(goal);
+    });
+  }
 }
 lazyLoadGoals();
 
@@ -192,14 +197,9 @@ function customSelector() {
     });
     options.forEach((option) => {
       option.addEventListener("click", () => {
-        let optionVal = option
-          .querySelector("[data-option-value]")
-          .getAttribute("data-option-value");
-        selector
-          .querySelector("[data-selected-value]")
-          .setAttribute("data-selected-value", optionVal);
-        selector.querySelector("[data-selected-value]").textContent =
-          option.querySelector("[data-option-value]").textContent;
+        let optionVal = option.querySelector("[data-option-value]").getAttribute("data-option-value");
+        selector.querySelector("[data-selected-value]").setAttribute("data-selected-value", optionVal);
+        selector.querySelector("[data-selected-value]").textContent = option.querySelector("[data-option-value]").textContent;
       });
     });
   });
@@ -213,8 +213,7 @@ function loadNews() {
   const newsTitle = document.getElementById("news-title");
   const newsDescription = document.getElementById("news-description");
   let xhttp = new XMLHttpRequest();
-  let url =
-    "https://raw.githubusercontent.com/Luke-Fernando/tanzstudio_aliia_pushilina/main/data/news.xml";
+  let url = "https://raw.githubusercontent.com/Luke-Fernando/tanzstudio_aliia_pushilina/main/data/news.xml";
   // let url = "../../data/news.xml";
 
   xhttp.onreadystatechange = function () {
@@ -231,10 +230,7 @@ function loadNews() {
             btn.classList.add("active-news");
           });
           let btnAttVal = Number(btn.getAttribute("data-news-navigator"));
-          newsImg.setAttribute(
-            "src",
-            `./assets/images/news/${posts[btnAttVal].querySelector("image").getAttribute("src")}`
-          );
+          newsImg.setAttribute("src", `./assets/images/news/${posts[btnAttVal].querySelector("image").getAttribute("src")}`);
           newsTitle.innerText = posts[btnAttVal].querySelector("title").textContent;
           newsDescription.innerText = posts[btnAttVal].querySelector("description").textContent;
         });
@@ -313,57 +309,127 @@ function contact() {
   const errorAlert = document.querySelector("#alert-error");
   const alertClose = document.getElementById("alert-close-btn");
   const clickOrTouch = "ontouchstart" in window ? "touchstart" : "click";
-  sendBtn.addEventListener(clickOrTouch, async (event) => {
-    event.preventDefault();
-    // let request = new XMLHttpRequest();
-    let form = new FormData();
+  if (name != null) {
+    sendBtn.addEventListener(clickOrTouch, async (event) => {
+      event.preventDefault();
+      // let request = new XMLHttpRequest();
+      let form = new FormData();
 
-    form.append("name", name.value);
-    form.append("topic", topic.getAttribute("data-selected-value"));
-    form.append("email", email.value);
-    form.append("subject", subject.value);
-    form.append("message", message.value);
+      form.append("name", name.value);
+      form.append("topic", topic.getAttribute("data-selected-value"));
+      form.append("email", email.value);
+      form.append("subject", subject.value);
+      form.append("message", message.value);
 
-    let request = await fetch("https://tanzstudio-backend.vercel.app/api/idance_studio.php", {
-      method: "POST",
-      body: form,
-    });
+      let request = await fetch("https://tanzstudio-backend.vercel.app/api/idance_studio.php", {
+        method: "POST",
+        body: form,
+      });
 
-    let response = request.text();
-    const responseText = await response.then((value) => value);
-    if (responseText == "success") {
-      alert.classList.add("show-alert");
-      await new Promise((resolve) => setTimeout(resolve, 0));
-      alert.classList.add("pop-alert");
-      errorAlert.classList.remove("alert-error");
-      successAlert.classList.add("alert-success");
-      document.querySelector('[data-alert-text="success"]').innerText =
-        "Thank you for contacting us!";
-    } else {
-      alert.classList.add("show-alert");
-      await new Promise((resolve) => setTimeout(resolve, 0));
-      alert.classList.add("pop-alert");
-      successAlert.classList.remove("alert-success");
-      errorAlert.classList.add("alert-error");
-      document.querySelector('[data-alert-text="error"]').innerText = responseText;
-    }
-  });
-  alertClose.addEventListener(clickOrTouch, async (event) => {
-    event.preventDefault();
-    alert.classList.remove("pop-alert");
-    await new Promise((resolve) => setTimeout(resolve, 0));
-    alert.classList.add("pop-alert-reverse");
-    alert.addEventListener(
-      "animationend",
-      () => {
-        alert.classList.remove("show-alert");
-        alert.classList.remove("pop-alert-reverse");
-      },
-      {
-        once: true,
+      let response = request.text();
+      const responseText = await response.then((value) => value);
+      if (responseText == "success") {
+        alert.classList.add("show-alert");
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        alert.classList.add("pop-alert");
+        errorAlert.classList.remove("alert-error");
+        successAlert.classList.add("alert-success");
+        document.querySelector('[data-alert-text="success"]').innerText = "Thank you for contacting us!";
+      } else {
+        alert.classList.add("show-alert");
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        alert.classList.add("pop-alert");
+        successAlert.classList.remove("alert-success");
+        errorAlert.classList.add("alert-error");
+        document.querySelector('[data-alert-text="error"]').innerText = responseText;
       }
-    );
-  });
+    });
+    alertClose.addEventListener(clickOrTouch, async (event) => {
+      event.preventDefault();
+      alert.classList.remove("pop-alert");
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      alert.classList.add("pop-alert-reverse");
+      alert.addEventListener(
+        "animationend",
+        () => {
+          alert.classList.remove("show-alert");
+          alert.classList.remove("pop-alert-reverse");
+        },
+        {
+          once: true,
+        }
+      );
+    });
+  }
 }
 
 contact();
+
+function register() {
+  const firstName = document.getElementById("first-name");
+  const lastName = document.getElementById("last-name");
+  const mobileNumber = document.getElementById("mobile-number");
+  const classCategory = document.getElementById("class-category-value");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+  const sendBtn = document.getElementById("send");
+  const alert = document.getElementById("alert");
+  const successAlert = document.querySelector("#alert-success");
+  const errorAlert = document.querySelector("#alert-error");
+  const alertClose = document.getElementById("alert-close-btn");
+  const clickOrTouch = "ontouchstart" in window ? "touchstart" : "click";
+
+  if (firstName != null && lastName != null) {
+    sendBtn.addEventListener(clickOrTouch, async (event) => {
+      event.preventDefault();
+      // let request = new XMLHttpRequest();
+      let form = new FormData();
+
+      form.append("first_name", firstName.value);
+      form.append("last_name", lastName.value);
+      form.append("class_category", topic.getAttribute("data-selected-value"));
+      form.append("mobile_number", mobileNumber.value);
+      form.append("email", email.value);
+      form.append("message", message.value);
+
+      let request = await fetch("https://tanzstudio-backend.vercel.app/api/idance_studio.php", {
+        method: "POST",
+        body: form,
+      });
+
+      let response = request.text();
+      const responseText = await response.then((value) => value);
+      if (responseText == "success") {
+        alert.classList.add("show-alert");
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        alert.classList.add("pop-alert");
+        errorAlert.classList.remove("alert-error");
+        successAlert.classList.add("alert-success");
+        document.querySelector('[data-alert-text="success"]').innerText = "We'll get back to you soon!";
+      } else {
+        alert.classList.add("show-alert");
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        alert.classList.add("pop-alert");
+        successAlert.classList.remove("alert-success");
+        errorAlert.classList.add("alert-error");
+        document.querySelector('[data-alert-text="error"]').innerText = responseText;
+      }
+    });
+    alertClose.addEventListener(clickOrTouch, async (event) => {
+      event.preventDefault();
+      alert.classList.remove("pop-alert");
+      await new Promise((resolve) => setTimeout(resolve, 0));
+      alert.classList.add("pop-alert-reverse");
+      alert.addEventListener(
+        "animationend",
+        () => {
+          alert.classList.remove("show-alert");
+          alert.classList.remove("pop-alert-reverse");
+        },
+        {
+          once: true,
+        }
+      );
+    });
+  }
+}
