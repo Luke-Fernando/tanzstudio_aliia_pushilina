@@ -315,6 +315,7 @@ function contact() {
       // let request = new XMLHttpRequest();
       let form = new FormData();
 
+      form.append("execution", "contact");
       form.append("name", name.value);
       form.append("topic", topic.getAttribute("data-selected-value"));
       form.append("email", email.value);
@@ -385,6 +386,7 @@ function register() {
       // let request = new XMLHttpRequest();
       let form = new FormData();
 
+      form.append("execution", "register");
       form.append("first_name", firstName.value);
       form.append("last_name", lastName.value);
       form.append("class_category", classCategory.getAttribute("data-selected-value"));
