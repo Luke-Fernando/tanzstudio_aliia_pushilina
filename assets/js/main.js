@@ -387,7 +387,7 @@ function register() {
 
       form.append("first_name", firstName.value);
       form.append("last_name", lastName.value);
-      form.append("class_category", topic.getAttribute("data-selected-value"));
+      form.append("class_category", classCategory.getAttribute("data-selected-value"));
       form.append("mobile_number", mobileNumber.value);
       form.append("email", email.value);
       form.append("message", message.value);
