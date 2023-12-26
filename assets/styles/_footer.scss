@@ -9,7 +9,6 @@
   padding: 3rem 0 0 0;
 }
 .copyright {
-  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -18,7 +17,8 @@
 .copyright-text {
   font-family: $primary-font;
   color: $purple-bg-low;
-  font-size: 15px;
+  font-size: 14px;
+  text-align: center;
   opacity: 0.8;
 }
 .footer-content {
@@ -146,5 +146,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .copyright-text {
+    font-size: 12px;
   }
 }

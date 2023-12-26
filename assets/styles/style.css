@@ -1895,6 +1895,22 @@ body {
   line-height: 30px;
 }
 
+@media (min-width: 576px) and (max-width: 767px) {
+  .privacy-n-policy-topic-text {
+    font-size: 22px;
+  }
+  .privacy-n-policy-description-text {
+    font-size: 15px;
+  }
+}
+@media (max-width: 575px) {
+  .privacy-n-policy-topic-text {
+    font-size: 22px;
+  }
+  .privacy-n-policy-description-text {
+    font-size: 15px;
+  }
+}
 .who-r-we {
   height: auto;
 }
@@ -1945,6 +1961,22 @@ body {
   line-height: 30px;
 }
 
+@media (min-width: 576px) and (max-width: 767px) {
+  .who-r-we-topic-text {
+    font-size: 22px;
+  }
+  .who-r-we-description-text {
+    font-size: 15px;
+  }
+}
+@media (max-width: 575px) {
+  .who-r-we-topic-text {
+    font-size: 22px;
+  }
+  .who-r-we-description-text {
+    font-size: 15px;
+  }
+}
 .footer {
   width: 100vw;
   height: auto;
@@ -1957,7 +1989,6 @@ body {
 }
 
 .copyright {
-  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -1967,7 +1998,8 @@ body {
 .copyright-text {
   font-family: "Kaisei HarunoUmi", serif;
   color: #e7e1ea;
-  font-size: 15px;
+  font-size: 14px;
+  text-align: center;
   opacity: 0.8;
 }
 
@@ -2113,5 +2145,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .copyright-text {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=style.css.map */
