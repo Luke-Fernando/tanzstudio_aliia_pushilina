@@ -73,7 +73,6 @@ openSideMenu();
 
 function toggleNavbarPosition() {
   const homeSec = document.getElementById("home");
-  console.log(homeSec);
   if (homeSec != null) {
     const navBar = document.getElementById("navbar");
     const options = {
@@ -247,13 +246,15 @@ function changeNavWithURL() {
   const navLinksElems = document.querySelectorAll("[data-nav-link]");
   const navLinks = [...navLinksElems];
   let hash = window.location.hash;
-  navLinks.forEach((link) => {
-    if (link.getAttribute("data-nav-link") == hash) {
-      link.classList.add("active-nav-link");
-    } else {
-      link.classList.remove("active-nav-link");
-    }
-  });
+  if (hash.length > 0) {
+    navLinks.forEach((link) => {
+      if (link.getAttribute("data-nav-link") == hash) {
+        link.classList.add("active-nav-link");
+      } else {
+        link.classList.remove("active-nav-link");
+      }
+    });
+  }
   window.addEventListener("hashchange", (e) => {
     hash = window.location.hash;
     navLinks.forEach((link) => {
