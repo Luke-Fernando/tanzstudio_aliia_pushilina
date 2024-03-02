@@ -25,6 +25,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  &:hover {
+    .team-member-details-btn {
+      opacity: 0.8;
+    }
+  }
+}
+.team-member-details-btn {
+  border: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: $purple-bg-low;
+  opacity: 0;
+  transition: all 100ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-member-details-icon {
+  color: $purple-bg-high;
+  font-size: 50px;
 }
 .team-member-img {
   min-width: 100%;
@@ -58,7 +83,7 @@
 }
 .team-member-position {
   font-size: 12px;
-  font-family: $news-hover-bg;
+  font-family: $primary-font;
   color: $topic-color;
   font-weight: 500;
   text-align: center;
