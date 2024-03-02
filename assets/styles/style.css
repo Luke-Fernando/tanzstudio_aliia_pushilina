@@ -517,16 +517,27 @@ body {
 }
 .header {
   width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  height: 80vh;
+  height: 80dvh;
   background-image: url("../images/header/header-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  mask-mode: alpha;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.header-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .header-texts-container {
