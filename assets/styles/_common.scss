@@ -178,6 +178,20 @@ body {
   font-size: 15px;
   margin-right: 10px;
 }
+.show-element {
+  animation: show-element 700ms linear forwards;
+}
+@keyframes show-element {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.show-element {
+  animation: show-element 700ms linear forwards;
+}
 @media (min-width: 1200px) and (max-width: 1399px) {
   .container {
     width: 1140px;

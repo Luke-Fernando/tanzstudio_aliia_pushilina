@@ -137,29 +137,67 @@ function placeActiveNav(selector, activeLink) {
 // }
 // monitorActiveSection("#home");
 
-function lazyLoadGoals() {
-  const goals = document.querySelectorAll("[data-goal]");
-  if (goals != null) {
-    const options = {
-      threshold: 0.2,
-    };
-    goals.forEach((goal) => {
-      let goalObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // console.log(true);
-            goal.classList.add("show-goal");
-            goalObserver.unobserve(goal);
-          } else {
-            // console.log(false);
-          }
-        });
-      }, options);
-      goalObserver.observe(goal);
-    });
+class LazyLoadEle {
+  constructor(selectors) {
+    this.selectors = [...selectors];
+  }
+  lazyLoad() {
+    if (this.selectors != null) {
+      const options = {
+        threshold: 0.2,
+      };
+      this.selectors.forEach((selector) => {
+        let selectorObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // console.log(true);
+              selector.classList.add("show-element");
+              selectorObserver.unobserve(selector);
+            } else {
+              // console.log(false);
+            }
+          });
+        }, options);
+        selectorObserver.observe(selector);
+      });
+    }
   }
 }
+
+function lazyLoadGoals() {
+  const goals = document.querySelectorAll("[data-goal]");
+  const lazyLoadGoals = new LazyLoadEle(goals);
+  lazyLoadGoals.lazyLoad();
+}
 lazyLoadGoals();
+
+function lazyLoadCourses() {
+  const courses = document.querySelectorAll("[data-course]");
+  const lazyLoadCourses = new LazyLoadEle(courses);
+  lazyLoadCourses.lazyLoad();
+}
+lazyLoadCourses();
+
+function lazyLoadTeams() {
+  const teams = document.querySelectorAll("[data-team]");
+  const lazyLoadTeams = new LazyLoadEle(teams);
+  lazyLoadTeams.lazyLoad();
+}
+lazyLoadTeams();
+
+function lazyLoadNews() {
+  const news = document.querySelectorAll("[data-news]");
+  const lazyLoadNews = new LazyLoadEle(news);
+  lazyLoadNews.lazyLoad();
+}
+lazyLoadNews();
+
+function lazyLoadContacts() {
+  const contacts = document.querySelectorAll("[data-contact]");
+  const lazyLoadContacts = new LazyLoadEle(contacts);
+  lazyLoadContacts.lazyLoad();
+}
+lazyLoadContacts();
 
 function customSelector() {
   let customSelectors = document.querySelectorAll("[data-selector]");
