@@ -523,6 +523,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(#ab96b6, #ab96b6, #ab96b6 80%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(#ab96b6, #ab96b6, #ab96b6 80%, rgba(0, 0, 0, 0));
   mask-mode: alpha;
   display: flex;
   flex-direction: column;
