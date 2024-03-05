@@ -8,7 +8,6 @@
   justify-content: space-between;
   align-items: flex-start;
   margin: 100px 0;
-  opacity: 0;
 }
 .news-navigators {
   width: 35%;
@@ -31,6 +30,7 @@
   align-items: center;
   background-color: $purple-bg-low;
   position: relative;
+  opacity: 0;
 }
 .news-skeleton {
   position: absolute;
@@ -91,6 +91,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 0;
   // overflow: hidden;
   cursor: pointer;
   &:hover {

@@ -164,40 +164,47 @@ class LazyLoadEle {
   }
 }
 
-function lazyLoadGoals() {
-  const goals = document.querySelectorAll("[data-goal]");
-  const lazyLoadGoals = new LazyLoadEle(goals);
-  lazyLoadGoals.lazyLoad();
+function lazyLoadElements() {
+  const elements = document.querySelectorAll("[data-lazy-load]");
+  const lazyLoadElements = new LazyLoadEle(elements);
+  lazyLoadElements.lazyLoad();
 }
-lazyLoadGoals();
+lazyLoadElements();
 
-function lazyLoadCourses() {
-  const courses = document.querySelectorAll("[data-course]");
-  const lazyLoadCourses = new LazyLoadEle(courses);
-  lazyLoadCourses.lazyLoad();
-}
-lazyLoadCourses();
+// function lazyLoadGoals() {
+//   const goals = document.querySelectorAll("[data-goal]");
+//   const lazyLoadGoals = new LazyLoadEle(goals);
+//   lazyLoadGoals.lazyLoad();
+// }
+// lazyLoadGoals();
 
-function lazyLoadTeams() {
-  const teams = document.querySelectorAll("[data-team]");
-  const lazyLoadTeams = new LazyLoadEle(teams);
-  lazyLoadTeams.lazyLoad();
-}
-lazyLoadTeams();
+// function lazyLoadCourses() {
+//   const courses = document.querySelectorAll("[data-course]");
+//   const lazyLoadCourses = new LazyLoadEle(courses);
+//   lazyLoadCourses.lazyLoad();
+// }
+// lazyLoadCourses();
 
-function lazyLoadNews() {
-  const news = document.querySelectorAll("[data-news]");
-  const lazyLoadNews = new LazyLoadEle(news);
-  lazyLoadNews.lazyLoad();
-}
-lazyLoadNews();
+// function lazyLoadTeams() {
+//   const teams = document.querySelectorAll("[data-team]");
+//   const lazyLoadTeams = new LazyLoadEle(teams);
+//   lazyLoadTeams.lazyLoad();
+// }
+// lazyLoadTeams();
 
-function lazyLoadContacts() {
-  const contacts = document.querySelectorAll("[data-contact]");
-  const lazyLoadContacts = new LazyLoadEle(contacts);
-  lazyLoadContacts.lazyLoad();
-}
-lazyLoadContacts();
+// function lazyLoadNews() {
+//   const news = document.querySelectorAll("[data-news]");
+//   const lazyLoadNews = new LazyLoadEle(news);
+//   lazyLoadNews.lazyLoad();
+// }
+// lazyLoadNews();
+
+// function lazyLoadContacts() {
+//   const contacts = document.querySelectorAll("[data-contact]");
+//   const lazyLoadContacts = new LazyLoadEle(contacts);
+//   lazyLoadContacts.lazyLoad();
+// }
+// lazyLoadContacts();
 
 function customSelector() {
   let customSelectors = document.querySelectorAll("[data-selector]");
