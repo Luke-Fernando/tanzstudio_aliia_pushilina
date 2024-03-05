@@ -1340,6 +1340,38 @@ body {
   font-size: 6rem !important;
 }
 
+.timetable-link-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.timetable-link {
+  font-family: "Kaisei HarunoUmi", serif;
+  font-size: 20px;
+  color: #504356;
+  text-transform: capitalize;
+  transition: all 100ms linear;
+  margin: 0;
+}
+.timetable-link:hover {
+  color: #ab96b6;
+}
+
+.timetable-link-sm {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-transform: capitalize;
+  transition: all 100ms linear;
+  margin: 0;
+}
+.timetable-link-sm:hover {
+  color: #ab96b6;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .course-topic-container {
     margin: 2rem 0 0.5rem 0;

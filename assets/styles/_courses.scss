@@ -124,6 +124,35 @@
   color: $news-hover-bg;
   font-size: 6rem !important;
 }
+.timetable-link-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.timetable-link {
+  font-family: $primary-font;
+  font-size: 20px;
+  color: $description-color;
+  text-transform: capitalize;
+  transition: all 100ms linear;
+  margin: 0;
+  &:hover {
+    color: $news-hover-bg;
+  }
+}
+.timetable-link-sm {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-transform: capitalize;
+  transition: all 100ms linear;
+  margin: 0;
+  &:hover {
+    color: $news-hover-bg;
+  }
+}
 //
 @media (min-width: 1200px) and (max-width: 1399px) {
 }
