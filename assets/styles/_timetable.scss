@@ -22,7 +22,7 @@
   .table-row {
     .table-data {
       .table-data-description {
-        padding: 1.5rem 0;
+        padding: 2rem 0;
       }
     }
   }
@@ -37,11 +37,22 @@
 .table-body {
   width: 100%;
   font-size: 16px;
+  .table-data {
+    background-color: $purple-bg-low;
+    .table-data-description {
+      padding: 0.2rem 0;
+    }
+  }
 }
 .table-data-container {
   width: 100%;
   background-color: $purple-bg-low;
 }
-.table-data-description {
-  padding: 1rem 0;
+.table-date {
+  font-family: $primary-font;
+  color: $topic-color;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 35px;
+  margin: 20px 0;
 }

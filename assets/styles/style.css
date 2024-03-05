@@ -2186,7 +2186,7 @@ body {
   height: max-content;
 }
 .table-head .table-row .table-data .table-data-description {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
 }
 
 .table-row {
@@ -2201,14 +2201,25 @@ body {
   width: 100%;
   font-size: 16px;
 }
+.table-body .table-data {
+  background-color: #e7e1ea;
+}
+.table-body .table-data .table-data-description {
+  padding: 0.2rem 0;
+}
 
 .table-data-container {
   width: 100%;
   background-color: #e7e1ea;
 }
 
-.table-data-description {
-  padding: 1rem 0;
+.table-date {
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #423847;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 35px;
+  margin: 20px 0;
 }
 
 .footer {
