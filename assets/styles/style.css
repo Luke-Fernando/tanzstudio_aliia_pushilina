@@ -692,8 +692,11 @@ body {
 }
 
 .goal-img-container {
-  width: 40%;
+  width: 30%;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .goal-img {
@@ -701,7 +704,7 @@ body {
 }
 
 .goal-content-container {
-  width: 50%;
+  width: 55%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -711,7 +714,7 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   font-size: 32px;
   color: #423847;
-  text-align: end;
+  text-align: start;
   font-weight: 700;
   margin: 0;
   margin-bottom: 15px;
@@ -722,8 +725,27 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   color: #504356;
   font-size: 18px;
-  text-align: end;
+  text-align: start;
   line-height: 35px;
+}
+.goal-content-description ul {
+  color: inherit;
+  font-size: 16px;
+  font-family: inherit;
+}
+.goal-content-description li {
+  color: inherit;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+.goal-content-description p {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 .goal-reverse {
@@ -757,6 +779,9 @@ body {
   .goal-img-container {
     width: 100%;
   }
+  .goal-img {
+    width: 80%;
+  }
   .goal-content-container {
     margin-top: 20px;
     width: 100%;
@@ -780,6 +805,9 @@ body {
   }
   .goal-img-container {
     width: 100%;
+  }
+  .goal-img {
+    width: 80%;
   }
   .goal-content-container {
     margin-top: 20px;
@@ -805,6 +833,9 @@ body {
   }
   .goal-img-container {
     width: 100%;
+  }
+  .goal-img {
+    width: 80%;
   }
   .goal-content-container {
     margin-top: 20px;
