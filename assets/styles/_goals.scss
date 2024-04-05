@@ -7,7 +7,7 @@
 }
 
 .goal-img-container {
-  width: 30%;
+  width: 40%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .goal-content-container {
-  width: 55%;
+  width: 50%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -104,9 +104,6 @@
     width: 100%;
   }
 
-  .goal-img {
-    width: 80%;
-  }
 
   .goal-content-container {
     margin-top: 20px;
@@ -138,9 +135,6 @@
     width: 100%;
   }
 
-  .goal-img {
-    width: 80%;
-  }
 
   .goal-content-container {
     margin-top: 20px;
@@ -171,10 +165,6 @@
 
   .goal-img-container {
     width: 100%;
-  }
-
-  .goal-img {
-    width: 80%;
   }
 
   .goal-content-container {
