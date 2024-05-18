@@ -483,3 +483,51 @@ function register() {
 }
 
 register();
+
+
+function toggleLanguage() {
+  const langTogglers = document.querySelectorAll("[data-lang-toggler]");
+  langTogglers.forEach((toggler) => {
+    toggler.addEventListener("click", () => {
+      let togglerLang = toggler.getAttribute("data-lang-toggler");
+      localStorage.setItem("lang", togglerLang);
+      toggler.classList.add("lang-toggler-active");
+      langTogglers.forEach((otherToggler) => {
+        if (otherToggler != toggler) {
+          otherToggler.classList.remove("lang-toggler-active");
+        }
+      });
+      loadLanguage();
+    });
+  });
+}
+
+toggleLanguage();
+
+function loadLanguage() {
+  const langContents = document.querySelectorAll("[data-lang]");
+  const langTogglers = document.querySelectorAll("[data-lang-toggler]");
+  let currentLang = localStorage.getItem("lang");
+  if (currentLang == null) {
+    localStorage.setItem("lang", "en");
+    currentLang = localStorage.getItem("lang");
+  }
+  langContents.forEach((content) => {
+    let contentLang = content.getAttribute("data-lang");
+    if (contentLang != currentLang) {
+      content.classList.add("hide-lang-content");
+    } else {
+      content.classList.remove("hide-lang-content");
+    }
+  });
+  langTogglers.forEach((toggler) => {
+    let togglerLang = toggler.getAttribute("data-lang-toggler");
+    if (togglerLang == currentLang) {
+      toggler.classList.add("lang-toggler-active");
+    } else {
+      toggler.classList.remove("lang-toggler-active");
+    }
+  });
+}
+
+loadLanguage();

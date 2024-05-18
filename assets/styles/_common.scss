@@ -4,6 +4,7 @@ html {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -17,21 +18,26 @@ body {
   // scrollbar-gutter: stable;
   min-height: 568px;
 }
+
 .container {
   margin: auto;
   width: 1320px;
   //   background-color: red;
 }
+
 .scroll-block {
   overflow: hidden;
 }
+
 .regular-transition {
   transition: all 200ms linear;
 }
+
 .height-limit {
   min-height: 568px;
   max-height: 1920px;
 }
+
 .page-topic-container {
   width: 100%;
   height: auto;
@@ -40,6 +46,7 @@ body {
   align-items: center;
   position: relative;
   padding-top: 70px;
+
   // margin-bottom: 100px;
   &::after {
     content: "";
@@ -51,6 +58,7 @@ body {
     background-color: $purple-bg-high;
   }
 }
+
 .page-topic {
   font-family: $primary-font;
   color: $purple-bg-high;
@@ -58,6 +66,7 @@ body {
   text-transform: capitalize;
   margin: 0;
 }
+
 .tester {
   width: max-content;
   height: auto;
@@ -71,26 +80,32 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgb(253, 33, 33);
+
   .tester-text {
     display: none;
     color: aliceblue;
     font-family: $primary-font;
   }
 }
+
 @keyframes showAlert {
   0% {
     transform: translateX(120%);
   }
+
   25% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(-20px);
   }
+
   100% {
     transform: translateX(0);
   }
 }
+
 .alert {
   // width: 500px;
   width: max-content;
@@ -114,26 +129,32 @@ body {
   align-items: flex-start;
   transform: translateX(120%);
 }
+
 .pop-alert {
   animation-name: showAlert;
   animation-duration: 600ms;
   animation-fill-mode: forwards;
 }
+
 .pop-alert-reverse {
   animation-direction: reverse;
   animation-name: showAlert;
   animation-duration: 600ms;
   animation-fill-mode: forwards;
 }
+
 .show-alert {
   display: flex;
 }
+
 .alert-success {
   display: flex !important;
 }
+
 .alert-error {
   display: flex !important;
 }
+
 .alert-close-btn {
   width: 30px;
   aspect-ratio: 1/1;
@@ -143,15 +164,18 @@ body {
   border: none;
   background-color: transparent;
   transition: all 200ms linear;
+
   &:hover {
     background-color: $purple-bg-low;
   }
 }
+
 .alert-close-icon {
   color: $description-color;
   font-size: 20px;
   pointer-events: none;
 }
+
 .alert-text-box {
   width: max-content;
   min-height: 50px;
@@ -162,6 +186,7 @@ body {
   margin-right: 50px;
   margin-left: 25px;
 }
+
 .alert-text {
   font-family: $primary-font;
   color: $description-color;
@@ -173,97 +198,135 @@ body {
   text-transform: capitalize;
   // line-height: 25px;
 }
+
 .alert-text-icon {
   color: $description-color;
   font-size: 15px;
   margin-right: 10px;
 }
+
 .show-element {
   animation: show-element 700ms linear forwards;
 }
+
 @keyframes show-element {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .show-element {
   animation: show-element 700ms linear forwards;
 }
+
+.lang-content {
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.hide-lang-content {
+  display: none !important;
+}
+
 @media (min-width: 1200px) and (max-width: 1399px) {
   .container {
     width: 1140px;
   }
+
   .s1200-1399 {
     display: block !important;
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .container {
     width: 960px;
   }
+
   .page-topic {
     font-size: 40px;
   }
+
   .page-topic-container {
     &::after {
       top: 110%;
       width: 130px;
     }
   }
+
   .s992-1199 {
     display: block !important;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
     width: 720px;
   }
+
   .page-topic {
     font-size: 35px;
   }
+
   .page-topic-container {
     &::after {
       top: 110%;
       width: 120px;
     }
   }
+
   .s768-991 {
     display: block !important;
   }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
   .container {
     width: 540px;
   }
+
   .page-topic {
     font-size: 35px;
   }
+
   .page-topic-container {
     &::after {
       top: 110%;
       width: 110px;
     }
   }
+
   .s576-767 {
     display: block !important;
   }
 }
+
 @media (max-width: 575px) {
   .container {
     width: 95%;
   }
+
   .page-topic {
     font-size: 30px;
   }
+
   .page-topic-container {
     &::after {
       top: 110%;
       width: 100px;
     }
   }
+
   .s575 {
     display: block !important;
   }
