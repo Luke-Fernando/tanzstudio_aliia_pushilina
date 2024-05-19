@@ -64,6 +64,17 @@
     padding: 0;
     margin: 0;
   }
+
+  & a {
+    color: $description-color;
+    text-align: inherit;
+    text-decoration: underline;
+    transition: all 200ms linear;
+
+    &:hover {
+      color: $topic-color;
+    }
+  }
 }
 
 .goal-reverse {

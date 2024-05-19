@@ -116,27 +116,6 @@ function placeActiveNav(selector, activeLink) {
   }
 }
 
-// function monitorActiveSection(sectionId) {
-//   let element = document.querySelector(sectionId);
-//   let activeLink = document.querySelector(`[href='${sectionId}']`);
-//   function handle() {
-//     placeActiveNav(sectionId, activeLink);
-//   }
-//   let activeSectionObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         window.addEventListener("scroll", handle, true);
-//       } else {
-//         window.removeEventListener("scroll", handle, true);
-//         activeLink.classList.remove("active-nav-link");
-//       }
-//     });
-//   });
-
-//   activeSectionObserver.observe(element);
-// }
-// monitorActiveSection("#home");
-
 class LazyLoadEle {
   constructor(selectors) {
     this.selectors = [...selectors];
@@ -150,11 +129,9 @@ class LazyLoadEle {
         let selectorObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // console.log(true);
               selector.classList.add("show-element");
               selectorObserver.unobserve(selector);
             } else {
-              // console.log(false);
             }
           });
         }, options);
@@ -170,41 +147,6 @@ function lazyLoadElements() {
   lazyLoadElements.lazyLoad();
 }
 lazyLoadElements();
-
-// function lazyLoadGoals() {
-//   const goals = document.querySelectorAll("[data-goal]");
-//   const lazyLoadGoals = new LazyLoadEle(goals);
-//   lazyLoadGoals.lazyLoad();
-// }
-// lazyLoadGoals();
-
-// function lazyLoadCourses() {
-//   const courses = document.querySelectorAll("[data-course]");
-//   const lazyLoadCourses = new LazyLoadEle(courses);
-//   lazyLoadCourses.lazyLoad();
-// }
-// lazyLoadCourses();
-
-// function lazyLoadTeams() {
-//   const teams = document.querySelectorAll("[data-team]");
-//   const lazyLoadTeams = new LazyLoadEle(teams);
-//   lazyLoadTeams.lazyLoad();
-// }
-// lazyLoadTeams();
-
-// function lazyLoadNews() {
-//   const news = document.querySelectorAll("[data-news]");
-//   const lazyLoadNews = new LazyLoadEle(news);
-//   lazyLoadNews.lazyLoad();
-// }
-// lazyLoadNews();
-
-// function lazyLoadContacts() {
-//   const contacts = document.querySelectorAll("[data-contact]");
-//   const lazyLoadContacts = new LazyLoadEle(contacts);
-//   lazyLoadContacts.lazyLoad();
-// }
-// lazyLoadContacts();
 
 function customSelector() {
   let customSelectors = document.querySelectorAll("[data-selector]");
@@ -250,42 +192,63 @@ function customSelector() {
 }
 customSelector();
 
-function loadNews() {
+
+function loadNews(newsNavBtns, newsImg, news) {
+  if (localStorage.getItem("news") == null) {
+    localStorage.setItem("news", 1);
+  }
+  newsNavBtns.forEach((navBtn) => {
+    if (localStorage.getItem("news") == navBtn.getAttribute("data-news-navigator")) {
+      let newsNavImg = navBtn.querySelector("[data-news-navigator-img]");
+      let newsNavBtnAttVal = navBtn.getAttribute("data-news-navigator");
+      let currentNews = document.querySelector(`[data-news="${newsNavBtnAttVal}"]`);
+      navBtn.classList.add("active-news");
+      newsImg.setAttribute("src", newsNavImg.getAttribute("src"));
+      news.forEach((item) => {
+        if (item != currentNews) {
+          item.classList.add("news-hide");
+        } else if (item == currentNews) {
+          item.classList.remove("news-hide");
+        }
+      })
+    } else {
+      navBtn.classList.remove("active-news");
+    }
+  })
+}
+
+function displayNews() {
   const newsNavBtnElems = document.querySelectorAll("[data-news-navigator]");
   const newsNavBtns = [...newsNavBtnElems];
+  const newsElems = document.querySelectorAll("[data-news]");
+  const news = [...newsElems];
   const newsImg = document.getElementById("news-img");
-  const newsTitle = document.getElementById("news-title");
-  const newsDescription = document.getElementById("news-description");
-  let xhttp = new XMLHttpRequest();
-  let url = "https://raw.githubusercontent.com/Luke-Fernando/tanzstudio_aliia_pushilina/main/data/news.xml";
-  // let url = "../../data/news.xml";
-
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let xmlDoc = new DOMParser().parseFromString(this.responseText, "application/xml");
-      let posts = xmlDoc.querySelectorAll("post");
-
-      newsNavBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          console.log("load news function working");
-          newsNavBtns.forEach((ele) => {
-            console.log("load news button working");
-            ele.classList.remove("active-news");
-            btn.classList.add("active-news");
-          });
-          let btnAttVal = Number(btn.getAttribute("data-news-navigator"));
-          newsImg.setAttribute("src", `./assets/images/news/${posts[btnAttVal].querySelector("image").getAttribute("src")}`);
-          newsTitle.innerText = posts[btnAttVal].querySelector("title").textContent;
-          newsDescription.innerText = posts[btnAttVal].querySelector("description").textContent;
-        });
+  newsNavBtns.forEach((newsNavBtn) => {
+    newsNavBtn.addEventListener("click", () => {
+      let newsNavBtnAttVal = newsNavBtn.getAttribute("data-news-navigator");
+      let currentNews = document.querySelector(`[data-news="${newsNavBtnAttVal}"]`);
+      let newsNavImg = newsNavBtn.querySelector("[data-news-navigator-img]");
+      newsImg.setAttribute("src", newsNavImg.getAttribute("src"));
+      newsNavBtn.classList.add("active-news");
+      localStorage.setItem("news", Number(newsNavBtnAttVal));
+      newsNavBtns.forEach((otherNewsNavBtn) => {
+        if (otherNewsNavBtn != newsNavBtn) {
+          otherNewsNavBtn.classList.remove("active-news");
+        }
       });
-    }
-  };
-
-  xhttp.open("GET", url, true);
-  xhttp.send();
+      news.forEach((item) => {
+        if (item != currentNews) {
+          item.classList.add("news-hide");
+        } else if (item == currentNews) {
+          item.classList.remove("news-hide");
+        }
+      })
+    });
+  });
+  loadNews(newsNavBtns, newsImg, news);
 }
-loadNews();
+
+displayNews();
 
 function changeNavWithURL() {
   const navLinksElems = document.querySelectorAll("[data-nav-link]");
