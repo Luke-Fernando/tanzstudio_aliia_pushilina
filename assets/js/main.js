@@ -253,7 +253,12 @@ displayNews();
 function changeNavWithURL() {
   const navLinksElems = document.querySelectorAll("[data-nav-link]");
   const navLinks = [...navLinksElems];
-  let hash = window.location.hash;
+  // let hash = window.location.hash;
+  let location = window.location.href;
+  let origin = window.location.origin;
+  let base = location.replace(origin, "");
+  let hash = base.replace(/\//g, "");
+  console.log(hash);
   if (hash.length > 0) {
     navLinks.forEach((link) => {
       if (link.getAttribute("data-nav-link") == hash) {
@@ -264,7 +269,11 @@ function changeNavWithURL() {
     });
   }
   window.addEventListener("hashchange", (e) => {
-    hash = window.location.hash;
+    // hash = window.location.hash;
+    let location = window.location.href;
+    let origin = window.location.origin;
+    let base = location.replace(origin, "");
+    let hash = base.replace(/\//g, "");
     navLinks.forEach((link) => {
       if (link.getAttribute("data-nav-link") == hash) {
         link.classList.add("active-nav-link");
