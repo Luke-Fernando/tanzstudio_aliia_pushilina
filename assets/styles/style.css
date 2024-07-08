@@ -1777,6 +1777,7 @@ body {
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  pointer-events: none;
 }
 
 .team-member-name-container {
