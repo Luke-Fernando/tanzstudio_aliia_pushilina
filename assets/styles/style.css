@@ -1347,7 +1347,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-column-gap: 1.5rem;
-  margin: 100px auto;
+  margin: 100px auto 50px auto;
 }
 
 .course {
@@ -1491,13 +1491,13 @@ body {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
 
 .timetable-link {
   font-family: "Kaisei HarunoUmi", serif;
-  font-size: 20px;
+  font-size: 30px;
   color: #504356;
   text-transform: capitalize;
   transition: all 100ms linear;
