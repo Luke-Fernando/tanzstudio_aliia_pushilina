@@ -1,6 +1,7 @@
 .contact-us {
   margin: auto;
 }
+
 .form {
   display: flex;
   justify-content: space-between;
@@ -9,6 +10,7 @@
   margin: 100px auto;
   // position: relative;
 }
+
 .form-items {
   display: flex;
   justify-content: space-between;
@@ -24,12 +26,14 @@
   align-items: start;
   margin: 1rem 0;
 }
+
 .form-input-label-container {
   display: flex;
   justify-content: start;
   align-items: center;
   margin-bottom: 0.5rem;
 }
+
 .form-input-label {
   font-family: $primary-font;
   color: $description-color;
@@ -39,12 +43,14 @@
   padding: 0;
   margin: 0;
 }
+
 .form-input-container {
   width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
 }
+
 .form-input {
   width: 100%;
   font-size: 15px;
@@ -57,6 +63,7 @@
   box-sizing: border-box;
   padding: 0.5rem 1rem;
 }
+
 .form-select {
   width: 100%;
   font-size: 15px;
@@ -72,6 +79,7 @@
   align-items: center;
   position: relative;
 }
+
 .form-selected-text {
   font-family: inherit;
   font-size: inherit;
@@ -81,6 +89,7 @@
   margin: 0;
   pointer-events: none;
 }
+
 .form-select-arrow {
   width: max-content;
   height: 100%;
@@ -88,18 +97,22 @@
   justify-content: center;
   align-items: center;
 }
+
 .form-select-arrow-icon {
   color: inherit;
   font-size: 1.2rem !important;
   pointer-events: none;
   transition: transform 100ms ease-in-out;
 }
+
 .form-item-half {
   width: 49%;
 }
+
 .form-item-full {
   width: 100%;
 }
+
 .form-send-btn {
   margin: 1rem 0;
   border: none;
@@ -111,14 +124,18 @@
   text-transform: capitalize;
   padding: 0.4rem 4rem;
 }
+
 .form-options {
   min-width: 100%;
   width: max-content;
   height: auto;
-  max-height: 300px;
-  overflow-y: auto;
+  // max-height: 300px;
+  max-height: 0;
+  // overflow-y: auto;
+  overflow-y: hidden;
   background-color: $purple-bg-low;
-  display: none;
+  // display: none;
+  display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
@@ -126,9 +143,10 @@
   top: 105%;
   right: 0;
   box-sizing: border-box;
-  transform: translateY(-20px);
-  transition: transform 100ms ease-in-out;
+  // transform: translateY(-20px);
+  transition: all 100ms ease-in-out;
 }
+
 .option-container {
   width: 100%;
   height: auto;
@@ -138,15 +156,18 @@
   padding: 0.5rem 1rem;
   box-sizing: border-box;
   transition: all 100ms linear;
+
   &:hover {
     background-color: $news-hover-bg;
     color: $purple-bg-low;
   }
+
   &:active {
     background-color: $news-hover-bg;
     color: $purple-bg-low;
   }
 }
+
 .option {
   font-family: inherit;
   font-size: inherit;
@@ -157,62 +178,80 @@
   pointer-events: none;
   text-transform: capitalize;
 }
+
 .option-display {
-  display: flex !important;
+  max-height: 300px;
+  // max-height: 0;
+  overflow-y: auto;
 }
+
 .options-anim {
   transform: translateY(0);
 }
+
 .arrow-up {
   transform: rotate(180deg);
   transform-origin: center;
 }
+
 //
 @media (min-width: 768px) and (max-width: 991px) {
   .form-input-label {
     font-size: 18px;
   }
+
   .form-input-label {
     font-size: 18px;
   }
+
   .form-send-btn {
     margin: 1rem 0;
     font-size: 18px;
     padding: 0.4rem 4rem;
   }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
   .form-input-label {
     font-size: 16px;
   }
+
   .form-input {
     font-size: 14px;
   }
+
   .form-select {
     font-size: 14px;
   }
+
   .form-item-half {
     width: 100%;
   }
+
   .form-send-btn {
     margin: 1rem 0;
     font-size: 18px;
     padding: 0.4rem 4rem;
   }
 }
+
 @media (max-width: 575px) {
   .form-input-label {
     font-size: 16px;
   }
+
   .form-input {
     font-size: 14px;
   }
+
   .form-select {
     font-size: 14px;
   }
+
   .form-item-half {
     width: 100%;
   }
+
   .form-send-btn {
     margin: 1rem 0;
     font-size: 18px;

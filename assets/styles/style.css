@@ -1961,10 +1961,10 @@ body {
   width: -moz-max-content;
   width: max-content;
   height: auto;
-  max-height: 300px;
-  overflow-y: auto;
+  max-height: 0;
+  overflow-y: hidden;
   background-color: #e7e1ea;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
@@ -1972,8 +1972,7 @@ body {
   top: 105%;
   right: 0;
   box-sizing: border-box;
-  transform: translateY(-20px);
-  transition: transform 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
 .option-container {
@@ -2007,7 +2006,8 @@ body {
 }
 
 .option-display {
-  display: flex !important;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .options-anim {

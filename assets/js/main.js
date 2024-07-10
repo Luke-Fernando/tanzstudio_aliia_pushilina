@@ -1,3 +1,4 @@
+import lang from "./lang.js";
 function spinner() {
   document.onreadystatechange = async () => {
     if (document.readyState === "complete") {
@@ -156,29 +157,23 @@ function customSelector() {
     let optionsContainer = document.querySelector(`[data-options="${selectorAttVal}"]`);
     let options = optionsContainer.querySelectorAll("[data-option]");
     let arrowIcon = document.querySelector(`[data-selector-arrow="${selectorAttVal}"]`);
-    let flag = false;
+    function openOptions() {
+      optionsContainer.classList.add("option-display");
+      arrowIcon.classList.add("arrow-up");
+      selector.setAttribute("data-selector-show", "true");
+    }
+    function closeOptions() {
+      optionsContainer.classList.remove("option-display");
+      arrowIcon.classList.remove("arrow-up");
+      selector.setAttribute("data-selector-show", "false");
+    }
     selector.addEventListener("click", async () => {
-      async function openOptions() {
-        optionsContainer.classList.add("option-display");
-        await new Promise((resolve) => setTimeout(resolve, 0));
-        optionsContainer.classList.add("options-anim");
-        arrowIcon.classList.add("arrow-up");
-        flag = true;
-        console.log(`flag ${flag}`);
-      }
-      async function closeOptions() {
-        optionsContainer.classList.remove("option-display");
-        flag = false;
-        console.log(`flag ${flag}`);
-        arrowIcon.classList.remove("arrow-up");
-        optionsContainer.removeEventListener("transitionend", closeOptions);
-      }
-      if (!flag) {
+      let selectorState = selector.getAttribute("data-selector-show");
+
+      if (selectorState == "false") {
         openOptions();
-      } else {
-        optionsContainer.classList.remove("options-anim");
-        await new Promise((resolve) => setTimeout(resolve, 0));
-        optionsContainer.addEventListener("transitionend", closeOptions);
+      } else if (selectorState == "true") {
+        closeOptions();
       }
     });
     options.forEach((option) => {
@@ -186,6 +181,7 @@ function customSelector() {
         let optionVal = option.querySelector("[data-option-value]").getAttribute("data-option-value");
         selector.querySelector("[data-selected-value]").setAttribute("data-selected-value", optionVal);
         selector.querySelector("[data-selected-value]").textContent = option.querySelector("[data-option-value]").textContent;
+        closeOptions();
       });
     });
   });
@@ -457,49 +453,137 @@ function register() {
 register();
 
 
-function toggleLanguage() {
+// function toggleLanguage() {
+//   const langTogglers = document.querySelectorAll("[data-lang-toggler]");
+//   langTogglers.forEach((toggler) => {
+//     toggler.addEventListener("click", () => {
+//       let togglerLang = toggler.getAttribute("data-lang-toggler");
+//       localStorage.setItem("lang", togglerLang);
+//       toggler.classList.add("lang-toggler-active");
+//       langTogglers.forEach((otherToggler) => {
+//         if (otherToggler != toggler) {
+//           otherToggler.classList.remove("lang-toggler-active");
+//         }
+//       });
+//       loadLanguage();
+//     });
+//   });
+// }
+
+// toggleLanguage();
+
+// function loadLanguage() {
+//   const langContents = document.querySelectorAll("[data-lang]");
+//   const langTogglers = document.querySelectorAll("[data-lang-toggler]");
+//   let currentLang = localStorage.getItem("lang");
+//   if (currentLang == null) {
+//     localStorage.setItem("lang", "en");
+//     currentLang = localStorage.getItem("lang");
+//   }
+//   langContents.forEach((content) => {
+//     let contentLang = content.getAttribute("data-lang");
+//     if (contentLang != currentLang) {
+//       content.classList.add("hide-lang-content");
+//     } else {
+//       content.classList.remove("hide-lang-content");
+//     }
+//   });
+//   langTogglers.forEach((toggler) => {
+//     let togglerLang = toggler.getAttribute("data-lang-toggler");
+//     if (togglerLang == currentLang) {
+//       toggler.classList.add("lang-toggler-active");
+//     } else {
+//       toggler.classList.remove("lang-toggler-active");
+//     }
+//   });
+// }
+
+// loadLanguage();
+
+
+
+
+// console.log(lang["en"]["navigation"]);
+function language() {
+  const defaultLang = "de";
+  const langEle = document.querySelector("html[lang]");
   const langTogglers = document.querySelectorAll("[data-lang-toggler]");
-  langTogglers.forEach((toggler) => {
-    toggler.addEventListener("click", () => {
-      let togglerLang = toggler.getAttribute("data-lang-toggler");
-      localStorage.setItem("lang", togglerLang);
-      toggler.classList.add("lang-toggler-active");
-      langTogglers.forEach((otherToggler) => {
-        if (otherToggler != toggler) {
-          otherToggler.classList.remove("lang-toggler-active");
-        }
+  if (langEle != null) {
+    function changeLang() {
+      langTogglers.forEach(toggler => {
+        toggler.addEventListener("click", async () => {
+          let togglerLang = toggler.getAttribute("data-lang-toggler");
+          langEle.setAttribute("lang", togglerLang);
+          localStorage.setItem("lang", togglerLang);
+          await new Promise((resolve) => setTimeout(resolve, 10));
+          location.reload();
+        });
       });
-      loadLanguage();
-    });
-  });
-}
-
-toggleLanguage();
-
-function loadLanguage() {
-  const langContents = document.querySelectorAll("[data-lang]");
-  const langTogglers = document.querySelectorAll("[data-lang-toggler]");
-  let currentLang = localStorage.getItem("lang");
-  if (currentLang == null) {
-    localStorage.setItem("lang", "en");
-    currentLang = localStorage.getItem("lang");
+    }
+    changeLang();
+    function setLang() {
+      return new Promise((resolve) => {
+        document.addEventListener("DOMContentLoaded", () => {
+          const setLang = localStorage.getItem("lang");
+          if (setLang == null) {
+            localStorage.setItem("lang", defaultLang);
+            langEle.setAttribute("lang", defaultLang);
+          } else {
+            langEle.setAttribute("lang", setLang);
+            langTogglers.forEach(toggler => {
+              let togglerLang = toggler.getAttribute("data-lang-toggler");
+              if (togglerLang == setLang) {
+                toggler.classList.add("lang-toggler-active");
+              } else {
+                toggler.classList.remove("lang-toggler-active");
+              }
+            });
+          }
+          resolve();
+        });
+      });
+    }
+    async function loadLanguage() {
+      await setLang();
+      let currentLang = langEle.getAttribute("lang");
+      let content = lang[currentLang];
+      let textElems = document.querySelectorAll("[data-key-text]");
+      let inputElems = document.querySelectorAll("[data-key-input]");
+      let optionElems = document.querySelectorAll("[data-key-option]");
+      textElems.forEach(ele => {
+        let keyString = ele.getAttribute("data-key-text");
+        let keys = keyString.split(".");
+        console.log(keys);
+        let result = content;
+        for (let key of keys) {
+          result = result[key];
+        }
+        ele.innerHTML = result;
+      });
+      inputElems.forEach(ele => {
+        let keyString = ele.getAttribute("data-key-input");
+        let keys = keyString.split(".");
+        console.log(keys);
+        let result = content;
+        for (let key of keys) {
+          result = result[key];
+        }
+        ele.setAttribute("placeholder", result);
+      });
+      optionElems.forEach(ele => {
+        let keyString = ele.getAttribute("data-key-option");
+        let keys = keyString.split(".");
+        console.log(keys);
+        let result = content;
+        for (let key of keys) {
+          result = result[key];
+        }
+        ele.innerHTML = result;
+        ele.setAttribute("data-option-value", keys[keys.length - 1]);
+      });
+    }
+    loadLanguage();
   }
-  langContents.forEach((content) => {
-    let contentLang = content.getAttribute("data-lang");
-    if (contentLang != currentLang) {
-      content.classList.add("hide-lang-content");
-    } else {
-      content.classList.remove("hide-lang-content");
-    }
-  });
-  langTogglers.forEach((toggler) => {
-    let togglerLang = toggler.getAttribute("data-lang-toggler");
-    if (togglerLang == currentLang) {
-      toggler.classList.add("lang-toggler-active");
-    } else {
-      toggler.classList.remove("lang-toggler-active");
-    }
-  });
 }
 
-loadLanguage();
+language();
