@@ -166,6 +166,7 @@ function customSelector() {
       optionsContainer.classList.remove("option-display");
       arrowIcon.classList.remove("arrow-up");
       selector.setAttribute("data-selector-show", "false");
+      console.log("closed");
     }
     selector.addEventListener("click", async () => {
       let selectorState = selector.getAttribute("data-selector-show");
@@ -177,13 +178,20 @@ function customSelector() {
       }
     });
     options.forEach((option) => {
-      option.addEventListener("click", () => {
+      option.addEventListener("click", (event) => {
+        event.stopPropagation();
         let optionVal = option.querySelector("[data-option-value]").getAttribute("data-option-value");
         selector.querySelector("[data-selected-value]").setAttribute("data-selected-value", optionVal);
         selector.querySelector("[data-selected-value]").textContent = option.querySelector("[data-option-value]").textContent;
+        console.log("clicked");
         closeOptions();
       });
     });
+    document.addEventListener("click", (event) => {
+      if (!selector.contains(event.target) && !optionsContainer.contains(event.target)) {
+        closeOptions();
+      }
+    })
   });
 }
 customSelector();
@@ -249,12 +257,10 @@ displayNews();
 function changeNavWithURL() {
   const navLinksElems = document.querySelectorAll("[data-nav-link]");
   const navLinks = [...navLinksElems];
-  // let hash = window.location.hash;
   let location = window.location.href;
   let origin = window.location.origin;
   let base = location.replace(origin, "");
   let hash = base.replace(/\//g, "");
-  console.log(hash);
   if (hash.length > 0) {
     navLinks.forEach((link) => {
       if (link.getAttribute("data-nav-link") == hash) {
@@ -265,7 +271,6 @@ function changeNavWithURL() {
     });
   }
   window.addEventListener("hashchange", (e) => {
-    // hash = window.location.hash;
     let location = window.location.href;
     let origin = window.location.origin;
     let base = location.replace(origin, "");
@@ -452,58 +457,6 @@ function register() {
 
 register();
 
-
-// function toggleLanguage() {
-//   const langTogglers = document.querySelectorAll("[data-lang-toggler]");
-//   langTogglers.forEach((toggler) => {
-//     toggler.addEventListener("click", () => {
-//       let togglerLang = toggler.getAttribute("data-lang-toggler");
-//       localStorage.setItem("lang", togglerLang);
-//       toggler.classList.add("lang-toggler-active");
-//       langTogglers.forEach((otherToggler) => {
-//         if (otherToggler != toggler) {
-//           otherToggler.classList.remove("lang-toggler-active");
-//         }
-//       });
-//       loadLanguage();
-//     });
-//   });
-// }
-
-// toggleLanguage();
-
-// function loadLanguage() {
-//   const langContents = document.querySelectorAll("[data-lang]");
-//   const langTogglers = document.querySelectorAll("[data-lang-toggler]");
-//   let currentLang = localStorage.getItem("lang");
-//   if (currentLang == null) {
-//     localStorage.setItem("lang", "en");
-//     currentLang = localStorage.getItem("lang");
-//   }
-//   langContents.forEach((content) => {
-//     let contentLang = content.getAttribute("data-lang");
-//     if (contentLang != currentLang) {
-//       content.classList.add("hide-lang-content");
-//     } else {
-//       content.classList.remove("hide-lang-content");
-//     }
-//   });
-//   langTogglers.forEach((toggler) => {
-//     let togglerLang = toggler.getAttribute("data-lang-toggler");
-//     if (togglerLang == currentLang) {
-//       toggler.classList.add("lang-toggler-active");
-//     } else {
-//       toggler.classList.remove("lang-toggler-active");
-//     }
-//   });
-// }
-
-// loadLanguage();
-
-
-
-
-// console.log(lang["en"]["navigation"]);
 function language() {
   const defaultLang = "de";
   const langEle = document.querySelector("html[lang]");
@@ -553,7 +506,6 @@ function language() {
       textElems.forEach(ele => {
         let keyString = ele.getAttribute("data-key-text");
         let keys = keyString.split(".");
-        console.log(keys);
         let result = content;
         for (let key of keys) {
           result = result[key];
@@ -563,7 +515,6 @@ function language() {
       inputElems.forEach(ele => {
         let keyString = ele.getAttribute("data-key-input");
         let keys = keyString.split(".");
-        console.log(keys);
         let result = content;
         for (let key of keys) {
           result = result[key];
@@ -573,7 +524,6 @@ function language() {
       optionElems.forEach(ele => {
         let keyString = ele.getAttribute("data-key-option");
         let keys = keyString.split(".");
-        console.log(keys);
         let result = content;
         for (let key of keys) {
           result = result[key];
