@@ -210,11 +210,11 @@ const lang = {
         "register": {
             "title": "Class registration",
             "data": {
-                "first name": {
+                "first-name": {
                     "title": "First name",
                     "placeholder": "Type your first name here"
                 },
-                "last name": {
+                "last-name": {
                     "title": "Last name",
                     "placeholder": "Type your last name here"
                 },
@@ -222,9 +222,10 @@ const lang = {
                     "title": "Class category",
                     "options": {
                         "0": "Select your category",
-                        "1": "Option 1",
-                        "2": "Option 2",
-                        "3": "Option 3"
+                        "1": "Minis",
+                        "2": "Kids",
+                        "3": "Teens",
+                        "4": "custom"
                     }
                 },
                 "mobile": {
@@ -330,8 +331,8 @@ const lang = {
             }
         },
         "timetable": {
-            "title": "Class timetable",
-            "table head": {
+            "title": "Timetable",
+            "head": {
                 "time": "Time",
                 "description": "Description",
                 "location": "Location"
@@ -621,39 +622,40 @@ const lang = {
             }
         },
         "register": {
-            "title": "Class registration",
+            "title": "Kursanmeldung",
             "data": {
-                "first name": {
-                    "title": "First name",
-                    "placeholder": "Type your first name here"
+                "first-name": {
+                    "title": "Vorname",
+                    "placeholder": "Geben Sie hier Ihren Vornamen ein"
                 },
-                "last name": {
-                    "title": "Last name",
-                    "placeholder": "Type your last name here"
+                "last-name": {
+                    "title": "Nachname",
+                    "placeholder": "Geben Sie hier Ihren Nachnamen ein"
                 },
                 "category": {
-                    "title": "Class category",
+                    "title": "Kurskategorie",
                     "options": {
-                        "0": "Select your category",
-                        "1": "Option 1",
-                        "2": "Option 2",
-                        "3": "Option 3"
+                        "0": "Wählen Sie Ihre Kurskategorie",
+                        "1": "Minis",
+                        "2": "Kids",
+                        "3": "Teens",
+                        "4": "custom"
                     }
                 },
                 "mobile": {
-                    "title": "Mobile number",
-                    "placeholder": "Type your mobile number here"
+                    "title": "Handynummer",
+                    "placeholder": "Geben Sie hier Ihre Handynummer ein"
                 },
                 "email": {
                     "title": "Email",
-                    "placeholder": "Type your email here"
+                    "placeholder": "Geben Sie hier Ihre E-Mail ein"
                 },
                 "details": {
-                    "title": "Special details",
-                    "placeholder": "Type your message here"
+                    "title": "Besondere Details",
+                    "placeholder": "Geben Sie hier Ihre Nachricht ein"
                 },
                 "send": {
-                    "title": "Send"
+                    "title": "Senden"
                 }
             }
         },
@@ -743,74 +745,74 @@ const lang = {
             }
         },
         "timetable": {
-            "title": "Class timetable",
-            "table head": {
-                "time": "Time",
-                "description": "Description",
-                "location": "Location"
+            "title": "Studenplan",
+            "head": {
+                "time": "Zeit",
+                "description": "Beschreibung",
+                "location": "Ort"
             },
             "data": {
                 0: {
-                    "title": "Wednesday",
+                    "title": "Mittwoch",
                     "rows": {
                         0: {
                             "time": "15 - 15.45",
-                            "description": "Minis (Age Group 4 - 6)",
+                            "description": "Minis (ab 4 Jahren)",
                             "location": "Windischeschenbach"
                         },
                         1: {
                             "time": "16 - 17.00",
-                            "description": "Kids (Age Group 6 - 9)",
+                            "description": "Kids (ab 6 Jahren)",
                             "location": "Windischeschenbach"
                         },
                         2: {
                             "time": "17 - 18.00",
-                            "description": "Teens (Age Group 9 - 16)",
+                            "description": "Teens (ab 9 Jahren)",
                             "location": "Windischeschenbach"
                         },
                     }
                 },
                 1: {
-                    "title": "Thursday",
+                    "title": "Donnerstag",
                     "rows": {
                         0: {
                             "time": "14 - 14.45",
-                            "description": "Minis (Age Group 4 - 6)",
+                            "description": "Minis (ab 4 Jahren)",
                             "location": "Erbendorf"
                         },
                         1: {
                             "time": "15 - 16.00",
-                            "description": "Kids (Age Group 6 - 9)",
+                            "description": "Kids (ab 6 Jahren)",
                             "location": "Erbendorf"
                         }
                     }
                 },
                 2: {
-                    "title": "Friday",
+                    "title": "Freitag",
                     "rows": {
                         0: {
                             "time": "13.30 - 14.15",
-                            "description": "Minis (Age Group 3 - 6)",
+                            "description": "Minis (ab 3 Jahren)",
                             "location": "Störnstein"
                         },
                         1: {
                             "time": "14.15 - 15.00",
-                            "description": "Minies (Age Group 4 - 6)",
+                            "description": "Minis (ab 4 Jahren)",
                             "location": "Störnstein"
                         },
                         2: {
                             "time": "15.00 - 16.00",
-                            "description": "Kids (Age Group 7 - 9)",
+                            "description": "Kids (ab 7 Jahren)",
                             "location": "Störnstein"
                         },
                         3: {
                             "time": "16.00 - 17.00",
-                            "description": "Kids (Age Group 6 - 7)",
+                            "description": "Kids (ab 6 Jahren)",
                             "location": "Störnstein"
                         },
                         4: {
                             "time": "17.00 - 18.00",
-                            "description": "Teens (Age Group 12 - 18)",
+                            "description": "Teens (ab 10 Jahren)",
                             "location": "Störnstein"
                         },
                     }
