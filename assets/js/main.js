@@ -150,48 +150,49 @@ function lazyLoadElements() {
 lazyLoadElements();
 
 function customSelector() {
-  let customSelectors = document.querySelectorAll("[data-selector]");
-  customSelectors = [...customSelectors];
-  customSelectors.forEach((selector) => {
-    let selectorAttVal = selector.getAttribute("data-selector");
-    let optionsContainer = document.querySelector(`[data-options="${selectorAttVal}"]`);
-    let options = optionsContainer.querySelectorAll("[data-option]");
-    let arrowIcon = document.querySelector(`[data-selector-arrow="${selectorAttVal}"]`);
-    function openOptions() {
-      optionsContainer.classList.add("option-display");
-      arrowIcon.classList.add("arrow-up");
-      selector.setAttribute("data-selector-show", "true");
-    }
-    function closeOptions() {
-      optionsContainer.classList.remove("option-display");
-      arrowIcon.classList.remove("arrow-up");
-      selector.setAttribute("data-selector-show", "false");
-      console.log("closed");
-    }
-    selector.addEventListener("click", async () => {
-      let selectorState = selector.getAttribute("data-selector-show");
+  document.addEventListener("click", (event) => {
+    if (event.target.matches("[data-selector]")) {
+      let selector = event.target.closest("[data-selector]");
 
-      if (selectorState == "false") {
-        openOptions();
-      } else if (selectorState == "true") {
-        closeOptions();
+      let selectorAttVal = selector.getAttribute("data-selector");
+      let optionsContainer = document.querySelector(`[data-options="${selectorAttVal}"]`);
+      let options = optionsContainer.querySelectorAll("[data-option]");
+      let arrowIcon = document.querySelector(`[data-selector-arrow="${selectorAttVal}"]`);
+      function openOptions() {
+        optionsContainer.classList.add("option-display");
+        arrowIcon.classList.add("arrow-up");
+        selector.setAttribute("data-selector-show", "true");
       }
-    });
-    options.forEach((option) => {
-      option.addEventListener("click", (event) => {
-        event.stopPropagation();
-        let optionVal = option.querySelector("[data-option-value]").getAttribute("data-option-value");
-        selector.querySelector("[data-selected-value]").setAttribute("data-selected-value", optionVal);
-        selector.querySelector("[data-selected-value]").textContent = option.querySelector("[data-option-value]").textContent;
-        console.log("clicked");
-        closeOptions();
+      function closeOptions() {
+        optionsContainer.classList.remove("option-display");
+        arrowIcon.classList.remove("arrow-up");
+        selector.setAttribute("data-selector-show", "false");
+      }
+      function toggleOptions() {
+        let selectorState = selector.getAttribute("data-selector-show");
+
+        if (selectorState == "false") {
+          openOptions();
+        } else if (selectorState == "true") {
+          closeOptions();
+        }
+      }
+      toggleOptions();
+      options.forEach((option) => {
+        option.addEventListener("click", (event) => {
+          event.stopPropagation();
+          let optionVal = option.querySelector("[data-option-value]").getAttribute("data-option-value");
+          selector.querySelector("[data-selected-value]").setAttribute("data-selected-value", optionVal);
+          selector.querySelector("[data-selected-value]").textContent = option.querySelector("[data-option-value]").textContent;
+          closeOptions();
+        });
       });
-    });
-    document.addEventListener("click", (event) => {
-      if (!selector.contains(event.target) && !optionsContainer.contains(event.target)) {
-        closeOptions();
-      }
-    })
+      document.addEventListener("click", (event) => {
+        if (!selector.contains(event.target) && !optionsContainer.contains(event.target)) {
+          closeOptions();
+        }
+      });
+    }
   });
 }
 customSelector();
