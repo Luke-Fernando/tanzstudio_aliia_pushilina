@@ -11,7 +11,7 @@ const lang = {
                 "contact-us": "Contact us",
                 "class-registration": "Class registration",
                 "privacy-policy": "Privacy policy",
-                "who-are-we": "Who are we"
+                "who-are-we": "Legal notice"
             }
         },
         "header": {
@@ -249,7 +249,7 @@ const lang = {
             "title": "Aliia Pushilina",
             "data": {
                 "bio": "Inhaberin, Tanzlehrerin (Frühförderung, Ballett, Moderne Choreography)",
-                "content": `I'm AliaPushilina, and I've been dancing my entire conscious life, starting at the ageof 7. After completing school, I pursued
+                "content": `I'm Aliia Pushilina, and I've been dancing my entire conscious life, starting at the ageof 7. After completing school, I pursued
                         a dance degree at a
                         university inAmerica. Due to life circumstances, I couldn't stay in the USA, and instead, Ispent three years studying in
                         Russia, specializing in
@@ -310,7 +310,7 @@ const lang = {
             }
         },
         "who": {
-            "title": "Who are We",
+            "title": "Legal Notice",
             "data": {
                 0: {
                     "title": "Lorem ipsum dolor sit amet consectetur.",
@@ -342,17 +342,17 @@ const lang = {
                     "title": "Wednesday",
                     "rows": {
                         0: {
-                            "time": "15 - 15.45",
+                            "time": "15.00 - 15.45",
                             "description": "Minis (Age Group 4 - 6)",
                             "location": "Windischeschenbach"
                         },
                         1: {
-                            "time": "16 - 17.00",
+                            "time": "16.00 - 17.00",
                             "description": "Kids (Age Group 6 - 9)",
                             "location": "Windischeschenbach"
                         },
                         2: {
-                            "time": "17 - 18.00",
+                            "time": "17.00 - 18.00",
                             "description": "Teens (Age Group 9 - 16)",
                             "location": "Windischeschenbach"
                         },
@@ -362,12 +362,12 @@ const lang = {
                     "title": "Thursday",
                     "rows": {
                         0: {
-                            "time": "14 - 14.45",
+                            "time": "14.00 - 14.45",
                             "description": "Minis (Age Group 4 - 6)",
                             "location": "Erbendorf"
                         },
                         1: {
-                            "time": "15 - 16.00",
+                            "time": "15.00 - 16.00",
                             "description": "Kids (Age Group 6 - 9)",
                             "location": "Erbendorf"
                         }
@@ -404,6 +404,14 @@ const lang = {
                     }
                 }
             }
+        },
+        "footer": {
+            "title": "Footer",
+            "data": {
+                "navigation": "Navigation links",
+                "other": "other links",
+                "connect": " connect with us"
+            }
         }
     },
     "de": {
@@ -418,15 +426,15 @@ const lang = {
                 "contact-us": "Kontakt",
                 "class-registration": "Kursanmeldung",
                 "privacy-policy": "Datenschutz",
-                "who-are-we": "Wer sind wir"
+                "who-are-we": "Impressum"
             }
         },
         "header": {
             "title": "Header",
             "data": {
                 "topic": "Idance Studio",
-                "motto": "dancing classes to your doorstep.",
-                "free-trial": "Register for a free trial"
+                "motto": "Tanzstunden vor deiner Haustür.",
+                "free-trial": "kostenlose Probestunde vereinbaren"
             }
         },
         "about": {
@@ -663,7 +671,7 @@ const lang = {
             "title": "Aliia Pushilina",
             "data": {
                 "bio": "Inhaberin, Tanzlehrerin (Frühförderung, Ballett, Moderne Choreography)",
-                "content": `I'm AliaPushilina, and I've been dancing my entire conscious life, starting at the ageof 7. After completing school, I pursued
+                "content": `I'm Aliia Pushilina, and I've been dancing my entire conscious life, starting at the ageof 7. After completing school, I pursued
                         a dance degree at a
                         university inAmerica. Due to life circumstances, I couldn't stay in the USA, and instead, Ispent three years studying in
                         Russia, specializing in
@@ -724,7 +732,7 @@ const lang = {
             }
         },
         "who": {
-            "title": "Who are We",
+            "title": "Impressum",
             "data": {
                 0: {
                     "title": "Lorem ipsum dolor sit amet consectetur.",
@@ -817,6 +825,14 @@ const lang = {
                         },
                     }
                 }
+            }
+        },
+        "footer": {
+            "title": "Footer",
+            "data": {
+                "navigation": "Navigation links",
+                "other": "Weitere Links",
+                "connect": "KONTAKT"
             }
         }
     }

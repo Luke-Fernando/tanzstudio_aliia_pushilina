@@ -660,9 +660,12 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+  text-align: center;
   box-sizing: border-box;
-  width: 280px;
-  height: 50px;
+  padding: 10px 20px;
+  height: -moz-max-content;
+  height: max-content;
+  height: auto;
   background-color: hsl(0, 0%, 100%);
   font-size: 20px;
   font-family: "Kaisei HarunoUmi", serif;
@@ -690,8 +693,7 @@ body {
   }
   .header-btn {
     margin-top: 3rem;
-    width: 280px;
-    height: 50px;
+    max-width: 280px;
     font-size: 20px;
   }
 }
@@ -707,8 +709,7 @@ body {
   }
   .header-btn {
     margin-top: 3rem;
-    width: 280px;
-    height: 50px;
+    max-width: 280px;
     font-size: 20px;
   }
 }
@@ -724,8 +725,7 @@ body {
   }
   .header-btn {
     margin-top: 3rem;
-    width: 260px;
-    height: 45px;
+    max-width: 260px;
     font-size: 18px;
   }
 }
@@ -741,8 +741,7 @@ body {
   }
   .header-btn {
     margin-top: 3rem;
-    width: 260px;
-    height: 45px;
+    max-width: 260px;
     font-size: 18px;
   }
 }
@@ -759,8 +758,7 @@ body {
   }
   .header-btn {
     margin-top: 3rem;
-    width: 240px;
-    height: 40px;
+    max-width: 240px;
     font-size: 16px;
   }
 }
@@ -1356,7 +1354,7 @@ body {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 3rem 1rem;
   transition: all 100ms linear;
 }
 
@@ -1387,7 +1385,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0 0.5rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .course-topic {
@@ -1497,7 +1495,7 @@ body {
 
 .timetable-link {
   font-family: "Kaisei HarunoUmi", serif;
-  font-size: 30px;
+  font-size: 45px;
   color: #504356;
   text-transform: capitalize;
   transition: all 100ms linear;
@@ -1747,7 +1745,7 @@ body {
   align-items: center;
   position: relative;
 }
-.team-member-img-container:hover .team-member-details-btn {
+.team-member-img-container:hover .team-member-details-icon-container {
   opacity: 0.8;
 }
 
@@ -1755,16 +1753,27 @@ body {
   border: none;
   width: 100%;
   height: 100%;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  background-color: #e7e1ea;
-  opacity: 0;
+  position: relative;
   transition: all 100ms linear;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.team-member-details-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e1ea;
+  opacity: 0;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: all 100ms linear;
 }
 
 .team-member-details-icon {
