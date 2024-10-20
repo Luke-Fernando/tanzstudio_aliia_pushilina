@@ -410,7 +410,7 @@ const lang = {
             "data": {
                 "navigation": "Navigation links",
                 "other": "other links",
-                "connect": " connect with us"
+                "connect": "connect with us"
             }
         }
     },
@@ -711,7 +711,7 @@ const lang = {
             }
         },
         "privacy": {
-            "title": "Privacy and Policy",
+            "title": "Datenschutz",
             "data": {
                 0: {
                     "title": "Lorem ipsum dolor sit amet consectetur.",

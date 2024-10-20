@@ -1,9 +1,5 @@
 function loadData() {
-  // const goalsElems = document.querySelectorAll("[data-goal]");
-  // const goals = [...goalsElems];
-  //   var f = document.getElementById("fname");
-  //   var form = new FormData();
-  //   form.append("f", f.value);
+
   let request = new XMLHttpRequest();
 
   request.onreadystatechange = async function () {

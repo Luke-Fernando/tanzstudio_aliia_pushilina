@@ -538,3 +538,20 @@ function language() {
 }
 
 language();
+
+// fetch('../../editable/About/About-en.xlsx')
+//   .then(response => response.arrayBuffer())
+//   .then(data => {
+//     const workbook = XLSX.read(data, { type: 'array' });
+
+
+//     const worksheet = workbook.Sheets["1"];
+
+//     // Convert to JSON
+//     const jsonData = XLSX.utils.sheet_to_json(worksheet);
+//     console.log(jsonData);
+//   })
+//   .catch(error => {
+//     console.error("Error fetching the Excel file:", error);
+//     1415
+//   });
