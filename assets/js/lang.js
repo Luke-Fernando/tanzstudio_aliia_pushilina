@@ -18,7 +18,7 @@ const lang = {
             "title": "Header",
             "data": {
                 "topic": "Idance Studio",
-                "motto": "dancing classes to your doorstep.",
+                "motto": "Dancing classes to your doorstep.",
                 "free-trial": "Register for a free trial"
             }
         },
@@ -417,8 +417,8 @@ const lang = {
             "title": "Footer",
             "data": {
                 "navigation": "Navigation links",
-                "other": "other links",
-                "connect": "connect with us"
+                "other": "Other links",
+                "connect": "Connect with us"
             }
         }
     },

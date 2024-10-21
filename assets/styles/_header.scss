@@ -52,7 +52,6 @@
   padding: 0;
   margin: 0;
   text-align: center;
-  text-transform: capitalize;
   -webkit-text-stroke: 1px $purple-bg-high;
 }
 
@@ -68,7 +67,6 @@
   text-align: center;
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
 }
 
 .header-btn {
@@ -90,7 +88,6 @@
   text-decoration: none;
   font-weight: 500;
   color: $purple-bg-high;
-  text-transform: capitalize;
 
   & span {
     margin: 0;

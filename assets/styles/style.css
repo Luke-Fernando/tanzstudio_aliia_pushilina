@@ -52,7 +52,6 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   color: #6a5a72;
   font-size: 50px;
-  text-transform: capitalize;
   margin: 0;
 }
 
@@ -176,7 +175,6 @@ body {
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 0;
-  text-transform: capitalize;
 }
 
 .alert-text-icon {
@@ -494,7 +492,6 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   font-size: 30px;
   color: #e7e1ea;
-  text-transform: capitalize;
   text-decoration: none;
   padding: 10px 0 10px 0;
   margin: 0;
@@ -636,7 +633,6 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-  text-transform: capitalize;
   -webkit-text-stroke: 1px #6a5a72;
 }
 
@@ -652,7 +648,6 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
 }
 
 .header-btn {
@@ -672,7 +667,6 @@ body {
   text-decoration: none;
   font-weight: 500;
   color: #6a5a72;
-  text-transform: capitalize;
 }
 .header-btn span {
   margin: 0;
@@ -797,7 +791,6 @@ body {
   font-weight: 700;
   margin: 0;
   margin-bottom: 15px;
-  text-transform: capitalize;
 }
 
 .goal-content-description {
@@ -1395,7 +1388,6 @@ body {
   font-weight: 600;
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
 }
 
 .course-description-container {
@@ -1449,7 +1441,6 @@ body {
   padding: 0;
   margin: 0;
   text-align: left;
-  text-transform: capitalize;
 }
 
 .course-detail-value {
@@ -1497,7 +1488,6 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   font-size: 45px;
   color: #504356;
-  text-transform: capitalize;
   transition: all 100ms linear;
   margin: 0;
 }
@@ -1509,7 +1499,6 @@ body {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  text-transform: capitalize;
   transition: all 100ms linear;
   margin: 0;
 }
@@ -1878,7 +1867,6 @@ body {
   color: #504356;
   font-size: 20px;
   font-weight: 600;
-  text-transform: capitalize;
   padding: 0;
   margin: 0;
 }
@@ -1909,7 +1897,6 @@ body {
   font-weight: 500;
   font-family: "Kaisei HarunoUmi", serif;
   background-color: #e7e1ea;
-  text-transform: capitalize;
   color: #6a5a72;
   box-sizing: border-box;
   padding: 0.5rem 1rem;
@@ -2011,7 +1998,6 @@ body {
   padding: 0;
   margin: 0;
   pointer-events: none;
-  text-transform: capitalize;
 }
 
 .option-display {
@@ -2200,7 +2186,6 @@ body {
   color: #6a5a72;
   font-size: 25px;
   font-weight: 600;
-  text-transform: capitalize;
   margin: 0;
   text-align: left;
 }
@@ -2218,7 +2203,6 @@ body {
   color: #6a5a72;
   font-size: 16px;
   font-weight: 400;
-  text-transform: capitalize;
   margin: 0;
   text-align: left;
   line-height: 30px;
@@ -2491,7 +2475,6 @@ body {
 .other-topic {
   font-family: "Kaisei HarunoUmi", serif;
   color: #e7e1ea;
-  text-transform: capitalize;
   font-size: 18px;
   font-weight: 500;
   margin: 0;
@@ -2512,7 +2495,6 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   color: #e7e1ea;
   text-decoration: none;
-  text-transform: capitalize;
   font-size: 14px;
   opacity: 0.7;
   font-weight: 400;
@@ -2531,7 +2513,6 @@ body {
 .contacts-topic {
   font-family: "Kaisei HarunoUmi", serif;
   color: #e7e1ea;
-  text-transform: capitalize;
   font-size: 18px;
   font-weight: 500;
   margin: 0;

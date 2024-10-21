@@ -39,7 +39,6 @@
   color: $description-color;
   font-size: 20px;
   font-weight: 600;
-  text-transform: capitalize;
   padding: 0;
   margin: 0;
 }
@@ -70,7 +69,6 @@
   font-weight: 500;
   font-family: $primary-font;
   background-color: $purple-bg-low;
-  text-transform: capitalize;
   color: $purple-bg-high;
   box-sizing: border-box;
   padding: 0.5rem 1rem;
@@ -176,7 +174,6 @@
   padding: 0;
   margin: 0;
   pointer-events: none;
-  text-transform: capitalize;
 }
 
 .option-display {

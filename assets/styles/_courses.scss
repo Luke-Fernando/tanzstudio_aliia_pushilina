@@ -56,7 +56,6 @@
   font-weight: 600;
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
 }
 
 .course-description-container {
@@ -109,7 +108,6 @@
   padding: 0;
   margin: 0;
   text-align: left;
-  text-transform: capitalize;
 }
 
 .course-detail-value {
@@ -157,7 +155,6 @@
   font-family: $primary-font;
   font-size: 45px;
   color: $description-color;
-  text-transform: capitalize;
   transition: all 100ms linear;
   margin: 0;
 
@@ -170,7 +167,7 @@
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  text-transform: capitalize;
+  // text-transform: capitalize;
   transition: all 100ms linear;
   margin: 0;
 
