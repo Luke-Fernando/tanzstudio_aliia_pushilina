@@ -2383,6 +2383,7 @@ body {
 }
 
 .table-container {
+  max-width: 720px;
   width: 100%;
   height: auto;
   display: flex;
@@ -2434,10 +2435,18 @@ body {
 .table-date {
   font-family: "Kaisei HarunoUmi", serif;
   color: #423847;
-  text-align: center;
-  text-transform: capitalize;
+  text-align: left;
   font-size: 35px;
-  margin: 20px 0;
+  margin: 10px 0;
+}
+
+.table-address {
+  font-family: "Kaisei HarunoUmi", serif;
+  color: #504356;
+  opacity: 0.8;
+  text-align: center;
+  font-size: 16px;
+  margin: 5px 0 20px 0;
 }
 
 .footer {

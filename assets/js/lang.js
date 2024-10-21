@@ -340,6 +340,7 @@ const lang = {
             "data": {
                 0: {
                     "title": "Wednesday",
+                    "address": "WINDISCHESCHENBACH (WINTERLING-PORZELLAN-STRAßE 25)",
                     "rows": {
                         0: {
                             "time": "15.00 - 15.45",
@@ -356,10 +357,16 @@ const lang = {
                             "description": "Teens (Age Group 9 - 16)",
                             "location": "Windischeschenbach"
                         },
+                        3: {
+                            "time": "18.00 – 19.00",
+                            "description": "High Heels (Adults)",
+                            "location": "Windischeschenbach"
+                        },
                     }
                 },
                 1: {
                     "title": "Thursday",
+                    "address": "ERBENDORF (FRÜHMEßGASSE 15 - SPORTHALLE)",
                     "rows": {
                         0: {
                             "time": "14.00 - 14.45",
@@ -375,6 +382,7 @@ const lang = {
                 },
                 2: {
                     "title": "Friday",
+                    "address": "STÖRNSTEIN (FLOßER STR. 25B - RATHAUS)",
                     "rows": {
                         0: {
                             "time": "13.30 - 14.15",
@@ -762,6 +770,7 @@ const lang = {
             "data": {
                 0: {
                     "title": "Mittwoch",
+                    "address": "WINDISCHESCHENBACH (WINTERLING-PORZELLAN-STRAßE 25)",
                     "rows": {
                         0: {
                             "time": "15 - 15.45",
@@ -778,10 +787,16 @@ const lang = {
                             "description": "Teens (ab 9 Jahren)",
                             "location": "Windischeschenbach"
                         },
+                        3: {
+                            "time": "18.00 – 19.00",
+                            "description": "High Heels (Erwachsene)",
+                            "location": "Windischeschenbach"
+                        },
                     }
                 },
                 1: {
                     "title": "Donnerstag",
+                    "address": "ERBENDORF (FRÜHMEßGASSE 15 - SPORTHALLE)",
                     "rows": {
                         0: {
                             "time": "14 - 14.45",
@@ -797,6 +812,7 @@ const lang = {
                 },
                 2: {
                     "title": "Freitag",
+                    "address": "STÖRNSTEIN (FLOßER STR. 25B - RATHAUS)",
                     "rows": {
                         0: {
                             "time": "13.30 - 14.15",
