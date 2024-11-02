@@ -185,9 +185,11 @@ const lang = {
                     "title": "Topic",
                     "options": {
                         "0": "Select your topic",
-                        "1": "Option 1",
-                        "2": "Option 2",
-                        "3": "Option 3"
+                        "1": "Sign up for a trial class",
+                        "2": "Questions about courses and schedules",
+                        "3": "Request for private dance lessons",
+                        "4": "Leave feedback",
+                        "5": "Other"
                     }
                 },
                 "email": {
@@ -615,9 +617,11 @@ const lang = {
                     "title": "Thema",
                     "options": {
                         "0": "Wählen Sie Ihr Thema",
-                        "1": "Option 1",
-                        "2": "Option 2",
-                        "3": "Option 3"
+                        "1": "Anmeldung für Probestunde",
+                        "2": "Fragen zu Kursen und Zeiten",
+                        "3": "Anfrage für private Tanzstunden",
+                        "4": "Feedback geben",
+                        "5": "Anderes",
                     }
                 },
                 "email": {
