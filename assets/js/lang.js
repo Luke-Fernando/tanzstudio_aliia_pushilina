@@ -420,7 +420,8 @@ const lang = {
             "data": {
                 "navigation": "Navigation links",
                 "other": "Other links",
-                "connect": "Connect with us"
+                "connect": "Connect with us",
+                "whatsapp": "Feel free to WhatsApp me"
             }
         }
     },
@@ -539,7 +540,7 @@ const lang = {
                 1: {
                     "title": "Alina Subbotina",
                     "content": `Tanzlehrerin
-                            (Contamporary, Hip Hop)`
+                            (Contemporary, Hip Hop)`
                 }
             }
         },
@@ -852,7 +853,8 @@ const lang = {
             "data": {
                 "navigation": "Navigation links",
                 "other": "Weitere Links",
-                "connect": "KONTAKT"
+                "connect": "KONTAKT",
+                "whatsapp": "Gerne WhatsApp"
             }
         }
     }
