@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main # Replace with your branch name
+  site_url: https://zesty-starship-f7a34b.netlify.app/
+
+media_folder: "assets/uploads" # Default folder for media uploads (can be overridden per collection)
+public_folder: "/assets/uploads" # Public URL for the uploaded media
+
+collections:
+  # Blog Posts Collection
+  - name: "goals" # Identifier (must be unique)
+    label: "About us" # Label in CMS UI
+    folder: "/" # Folder where blog posts are stored
+    create: false # Allow new files
+    media_folder: "assets/images/goals" # Media folder for blog posts
+    public_folder: "/assets/images/goals" # Public path for blog images
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" } # Allows uploading images for blog posts
+# auth:
+#   name: "basic"
+#   password: "yourpassword" # Set a password here

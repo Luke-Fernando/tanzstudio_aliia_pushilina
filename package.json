@@ -1,0 +1,11 @@
+{
+  "name": "tanzstudio_aliia_pushilina",
+  "version": "1.0.0",
+  "description": "https://www.lido.app/tools/rich-text-to-html-converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
