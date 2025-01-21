@@ -104,13 +104,13 @@ const lang = {
             "data": {
                 0: {
                     "title": "Aliia Pushilina",
-                    "content": `Inhaberin, Tanzlehrerin
-                            (Frühförderung, Ballett, Moderne Choreography)`
+                    "content": `Owner, dance teacher
+                            (Early dance education, ballet, modern choreography)`
                 },
                 1: {
                     "title": "Alina Subbotina",
-                    "content": `Tanzlehrerin
-                            (Contamporary, Hip Hop)`
+                    "content": `Dance teacher
+                            (Contamporary, Hip Hop, modern choreography, early dance education)`
                 }
             }
         },
@@ -250,44 +250,26 @@ const lang = {
         "aliia": {
             "title": "Aliia Pushilina",
             "data": {
-                "bio": "Inhaberin, Tanzlehrerin (Frühförderung, Ballett, Moderne Choreography)",
-                "content": `I'm Aliia Pushilina, and I've been dancing my entire conscious life, starting at the ageof 7. After completing school, I pursued
-                        a dance degree at a
-                        university inAmerica. Due to life circumstances, I couldn't stay in the USA, and instead, Ispent three years studying in
-                        Russia, specializing in
-                        ballet, folk dance, andcontemporary choreography, ultimately earning my qualification as a danceteacher. <br><br>
-                        I also danced at the Mirror Dance Theater,taught children, and attended various dance workshops in Russia, America,
-                        andGermany.With two
-                        daughters—one teaching contemporary dance at our studio and the otherdancing herself. <br><br> Upon arriving in Germany in
-                        2018, I
-                        quickly noticed that
-                        pursuing dance insmall towns and villages is often challenging, requiring children to travel tolarger cities. This led me to
-                        the decision to start
-                        teaching dance inStörnstein. My proposal immediately caught attention, revealing that manychildren would love to dance close
-                        to home.Working with
-                        children and instilling in them a love for dance brings me immensepleasure. I hope that all children in small towns and
-                        villages will have
-                        theopportunity to dance.`
+                "bio": "Owner, dance teacher (Early dance education, ballet, modern choreography)",
+                "content": `I'm Alia Pushilina, and I've been dancing my entire conscious life, starting at the age of 7. After completing school, I pursued a dance degree at a university in America. Due to life circumstances, I couldn't stay in the USA, and instead, I spent three years studying in Russia, specializing in ballet, folk dance, and contemporary choreography, ultimately earning my qualification as a dance teacher.
+I also danced at the Mirror Dance Theater, taught children, and attended various dance workshops in Russia, America, and Germany.
+
+With two daughters—one teaching contemporary dance at our studio and the other dancing herself.
+
+Upon arriving in Germany in 2018, I quickly noticed that pursuing dance in small towns and villages is often challenging, requiring children to travel to larger cities. This led me to the decision to start teaching dance in Störnstein. My proposal immediately caught attention, revealing that many children would love to dance close to home.
+
+Working with children and instilling in them a love for dance brings me immense pleasure. I hope that all children in small towns and villages will have the opportunity to dance.`
             }
         },
         "alina": {
             "title": "Alina Subbotina",
             "data": {
-                "bio": "Tanzlehrerin (Contamporary, Hip Hop)",
-                "content": `I am Alina, and my passion for dancing has accompanied me since my early childhood. At the age of 3, I started practicing
-                        acrobatics in Russia, and by
-                        the age of 5, I attended a dance concert with my mom (whom you've already met). The captivating dancers and the magical stage
-                        atmosphere sparked a
-                        desire in me to learn more about the world of dance. That was the decisive moment when I said, 'I want to start dancing.
-                        <br><br>
-                        Subsequently, I had stage performances, concerts, and competitions until I became the soloist at my former dance school. In
-                        2018, we moved to Germany,
-                        and I took a one-year break from dancing. When I decided to resume, I unfortunately couldn't find anything that resonated with
-                        me. Each teacher has a
-                        unique dance style, and finding the right one was crucial. <br><br>
-                        Together with my mom, we pooled our experiences from various dance studios and founded our own dance studio for children and
-                        teenagers. We look
-                        forward to sharing our enthusiasm and expertise, creating an inspiring dance environment.`
+                "bio": "Dance teacher (Contamporary, Hip Hop, modern choreography, early dance education)",
+                "content": `I am Alina, and my passion for dancing has accompanied me since my early childhood. At the age of 3, I started practicing acrobatics in Russia, and by the age of 5, I attended a dance concert with my mom (whom you've already met). The captivating dancers and the magical stage atmosphere sparked a desire in me to learn more about the world of dance. That was the decisive moment when I said, 'I want to start dancing.'
+
+Subsequently, I had stage performances, concerts, and competitions until I became the soloist at my former dance school. In 2018, we moved to Germany, and I took a one-year break from dancing. When I decided to resume, I unfortunately couldn't find anything that resonated with me. Each teacher has a unique dance style, and finding the right one was crucial.
+
+Together with my mom, we pooled our experiences from various dance studios and founded our own dance studio for children and teenagers. We look forward to sharing our enthusiasm and expertise, creating an inspiring dance environment.`
             }
         },
         "privacy": {
@@ -540,7 +522,7 @@ const lang = {
                 1: {
                     "title": "Alina Subbotina",
                     "content": `Tanzlehrerin
-                            (Contemporary, Hip Hop)`
+(Contamporary, Hip Hop, Moderne Choreography, Frühförderung)`
                 }
             }
         },
@@ -684,43 +666,26 @@ const lang = {
             "title": "Aliia Pushilina",
             "data": {
                 "bio": "Inhaberin, Tanzlehrerin (Frühförderung, Ballett, Moderne Choreography)",
-                "content": `I'm Aliia Pushilina, and I've been dancing my entire conscious life, starting at the ageof 7. After completing school, I pursued
-                        a dance degree at a
-                        university inAmerica. Due to life circumstances, I couldn't stay in the USA, and instead, Ispent three years studying in
-                        Russia, specializing in
-                        ballet, folk dance, andcontemporary choreography, ultimately earning my qualification as a danceteacher. <br><br>
-                        I also danced at the Mirror Dance Theater,taught children, and attended various dance workshops in Russia, America,
-                        andGermany.With two
-                        daughters—one teaching contemporary dance at our studio and the otherdancing herself. <br><br> Upon arriving in Germany in
-                        2018, I
-                        quickly noticed that
-                        pursuing dance insmall towns and villages is often challenging, requiring children to travel tolarger cities. This led me to
-                        the decision to start
-                        teaching dance inStörnstein. My proposal immediately caught attention, revealing that manychildren would love to dance close
-                        to home.Working with
-                        children and instilling in them a love for dance brings me immensepleasure. I hope that all children in small towns and
-                        villages will have
-                        theopportunity to dance.`
+                "content": `Ich bin Aliia Pushilina und tanze mein ganzes bewusstes Leben lang, seit ich 7 Jahre alt bin. Nach meinem Schulabschluss entschied ich mich für ein Tanzstudium an einer Universität in Amerika. Aufgrund von Lebensumständen konnte ich jedoch nicht in den USA bleiben und habe stattdessen drei Jahre lang in Russland studiert, wo ich Ballett, Volkstanz und moderne Choreografie studierte. Dort erlangte ich die Qualifikation als Tanzpädagogin.
+
+Während meiner Zeit in Russland tanzte ich auch im Tanztheater Zerkalo, unterrichtete Kinder und nahm an verschiedenen Tanzworkshops in Russland, Amerika und Deutschland teil.
+
+Ich habe zwei Töchtern, von denen eine Contemporary Tanz in unserem Studio unterrichtet und die andere selbst tanzt.
+
+Als ich 2018 nach Deutschland kam, fiel mir sofort auf, dass es in kleinen Städten und Dörfern oft schwer ist, Tanzunterricht zu nehmen. Kinder müssen oft in größere Städte gebracht werden. Deshalb entschied ich mich, selbst Tanzunterricht in Sternstein zu geben. Mein Angebot stieß sofort auf Interesse, und es stellte sich heraus, dass viele Kinder gerne in der Nähe ihres Zuhauses tanzen würden.
+
+Es bereitet mir große Freude, mit Kindern zu arbeiten und ihnen die Liebe zum Tanz zu vermitteln. Ich hoffe, dass alle Kinder in kleinen Städten und Dörfern die Möglichkeit haben werden, zu tanzen.`
             }
         },
         "alina": {
             "title": "Alina Subbotina",
             "data": {
-                "bio": "Tanzlehrerin (Contamporary, Hip Hop)",
-                "content": `I am Alina, and my passion for dancing has accompanied me since my early childhood. At the age of 3, I started practicing
-                        acrobatics in Russia, and by
-                        the age of 5, I attended a dance concert with my mom (whom you've already met). The captivating dancers and the magical stage
-                        atmosphere sparked a
-                        desire in me to learn more about the world of dance. That was the decisive moment when I said, 'I want to start dancing.
-                        <br><br>
-                        Subsequently, I had stage performances, concerts, and competitions until I became the soloist at my former dance school. In
-                        2018, we moved to Germany,
-                        and I took a one-year break from dancing. When I decided to resume, I unfortunately couldn't find anything that resonated with
-                        me. Each teacher has a
-                        unique dance style, and finding the right one was crucial. <br><br>
-                        Together with my mom, we pooled our experiences from various dance studios and founded our own dance studio for children and
-                        teenagers. We look
-                        forward to sharing our enthusiasm and expertise, creating an inspiring dance environment.`
+                "bio": "Tanzlehrerin (Contamporary, Hip Hop, Moderne Choreography, Frühförderung)",
+                "content": `Ich bin Alina und meine Leidenschaft für das Tanzen begleitet mich seit meiner frühesten Kindheit. Schon im Alter von 3 Jahren begann ich in Russland mit Akrobatik und mit 5 Jahren besuchte ich gemeinsam mit meiner Mama (die habt sie bereits kennengelernt) ein Tanzkonzert. Die faszinierenden Tänzerinnen und die magische Bühnenatmosphäre weckten in mir den Wunsch, mehr über die Welt des Tanzes zu erfahren. Dies war der entscheidende Moment, als ich sagte: ‘Ich will das Tanzen beginnen. ’
+
+Daraufhin folgten Bühnenauftritte, Konzerte und Wettbewerbe, bis ich zur Solistin meiner damaligen Tanzschule wurde. 2018 sind wir nach Deutschland umgezogen. Hier pausierte ich das Tanzen für ein Jahr. Als ich wieder anfangen wollte, fand ich leider nichts, was mich ansprach. Jeder Lehrer bringt seinen Tanzstil anders bei, und es war wichtig, den richtigen zu finden.
+
+Gemeinsam mit meiner Mama haben wir unsere Erfahrung aus unterschiedlichen Tanzstudios gebündelt und unser eigenes Tanzstudio für Kinder und Jugendliche eröffnet. Wir freuen uns darauf, unsere Begeisterung und Expertise zu teilen und eine inspirierende Tanzumgebung zu schaffen.`
             }
         },
         "privacy": {
